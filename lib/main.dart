@@ -752,7 +752,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => VaccineRegis()),
+                        MaterialPageRoute(builder: (context) => VaccineRegis(mealsListData: mealsListData[0],)),
                       );
                     },
                     child: _categoryCard(mealsListData[0],
@@ -766,7 +766,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HelplinePage()),
+                        MaterialPageRoute(builder: (context) => HelplinePage(mealsListData: mealsListData[1],)),
                       );
                     },
                     child: _categoryCard(mealsListData[1],
@@ -789,7 +789,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => WhatsAppBotPage()),
+                            builder: (context) => WhatsAppBotPage(mealsListData: mealsListData[2],)),
                       );
                     },
                     child: _categoryCard(mealsListData[2],
@@ -803,7 +803,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ICMRlabspage()),
+                        MaterialPageRoute(builder: (context) => ICMRlabspage(mealsListData: mealsListData[3],)),
                       );
                     },
                     child: _categoryCard(mealsListData[3],
@@ -991,10 +991,13 @@ class _SymptomsPageState extends State<SymptomsPage> {
           Positioned(
             top: 10,
             left: 25,
-            child: SizedBox(
-              width: 60,
-              height: 60,
-              child: Image.asset(mealsListData.imagePath),
+            child: Hero(
+              tag: 'pngIconHero',
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child: Image.asset(mealsListData.imagePath),
+              ),
             ),
           )
         ],

@@ -755,7 +755,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         MaterialPageRoute(builder: (context) => VaccineRegis(mealsListData: mealsListData[0],)),
                       );
                     },
-                    child: _categoryCard(mealsListData[0],  //vaccination card
+                    child: _categoryCard(mealsListData[0],
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),
@@ -769,16 +769,13 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         MaterialPageRoute(builder: (context) => HelplinePage(mealsListData: mealsListData[1],)),
                       );
                     },
-                    child: _categoryCard(mealsListData[1],  //helpline card
+                    child: _categoryCard(mealsListData[1],
                         color: LightColor.orange,
                         lightColor: LightColor.lightOrange),
                   )
                 ],
               ),
             ),
-
-
-            //============>> row for two quick links card( i.e vaccination and helpline card row)
             SizedBox(
               height: AppTheme.fullHeight(context) * .20,
               width: AppTheme.fullWidth(context),
@@ -795,7 +792,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             builder: (context) => WhatsAppBotPage(mealsListData: mealsListData[2],)),
                       );
                     },
-                    child: _categoryCard(mealsListData[2],    // vaccination bot card
+                    child: _categoryCard(mealsListData[2],
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),
@@ -809,16 +806,13 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         MaterialPageRoute(builder: (context) => ICMRlabspage(mealsListData: mealsListData[3],)),
                       );
                     },
-                    child: _categoryCard(mealsListData[3],   // helpline labs card
+                    child: _categoryCard(mealsListData[3],
                         color: LightColor.orange,
                         lightColor: LightColor.lightOrange),
                   )
                 ],
               ),
             ),
-
-
-    //============>> row for two quick links card( i.e whatsapp bot  CARD and  ICMR LAB card row)
             SizedBox(
               height: AppTheme.fullHeight(context) * .20,
               width: AppTheme.fullWidth(context),

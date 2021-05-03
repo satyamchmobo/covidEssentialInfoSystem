@@ -107,20 +107,20 @@ class _ListItemCustomState extends State<ListItemCustom> {
                 ),
               ),
             ),
-            title: Text(prodName, style: TextStyles.title.copyWith(fontWeight: FontWeight.bold)),
+            title: Text(prodName, style: TextStyles.title.copyWith(fontWeight: FontWeight.bold,color: LightColor.titleTextColor)),
             subtitle: Row(
               children: [
                 Text(
-                  "Quantity : ${prodQuant}",
+                  "${prodQuant}",
                   style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
                 ),
                 SizedBox(
                   width: 5,
                 ),
-                Text(
-                  "Price : ${prodPrice}",
-                  style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
-                ),
+                // Text(
+                //   "Price : ${prodPrice}",
+                //   style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
+                // ),
               ],
             ),
             trailing: InkWell(

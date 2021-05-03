@@ -196,7 +196,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
               ListItemCustom( prodName: "MicInsee whatsapp bot",
               prodPrice:" 12",
               ind: 12,
-              prodQuant: " fdf",
+              prodQuant: " 8108982186",
               
               ),
 

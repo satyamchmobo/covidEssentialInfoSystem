@@ -20,7 +20,11 @@ class MealsListData {
       imagePath: 'assets/card7.png',
       titleTxt: 'Vaccine Registration',
       kacl: 602,
-      meals: <String>['Find all Vaccination,', 'Registration Platforms,', 'at single place'],
+      meals: <String>[
+        'Find all Vaccination,',
+        'Registration Platforms,',
+        'at single place'
+      ],
       startColor: '#F58420',
       endColor: '#FCBF95',
     ),
@@ -28,11 +32,15 @@ class MealsListData {
       imagePath: 'assets/card6.png',
       titleTxt: 'Helpline Numbers',
       kacl: 525,
+<<<<<<< HEAD
       meals: <String>['Ventilators,', 'Oxy Beds,', 'Oxy Cylandors'],
+=======
+      meals: <String>['180095874,', 'Curd,', 'Ghee'],
+>>>>>>> 79f56871b5a0c71b8d2cc467e73f075e5b7e4ecf
       startColor: '#0E1D2C',
       endColor: '#A5B2BE',
     ),
-      MealsListData(
+    MealsListData(
       imagePath: 'assets/card8.png',
       titleTxt: 'Whatsapp Bots',
       kacl: 525,
@@ -40,7 +48,7 @@ class MealsListData {
       startColor: '#20AD43',
       endColor: '#A5B2BE',
     ),
-      MealsListData(
+    MealsListData(
       imagePath: 'assets/card9.png',
       titleTxt: 'ICMR Labs',
       kacl: 525,

@@ -272,7 +272,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
                       height: 270,
                       width: 180,
                       child: Single_prod(
-                        prod_pricture1: "assets/covin.png",
+                        prod_pricture1: "assets/CoWIN_New_Logo.jpg",
                         prod_name: "Cowin",
                         prod_price: " 3",
                         prod_old_price: "d",
@@ -401,7 +401,7 @@ class Single_prod extends StatelessWidget {
                   border: Border.all(color: Color(0xFFF58420), width: 0.9),
                   borderRadius: BorderRadius.circular(15.0),
                   image: DecorationImage(
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                     image: AssetImage(prod_pricture1),
                   ),
                 ),
@@ -412,7 +412,7 @@ class Single_prod extends StatelessWidget {
               Flexible(
                 child: Text(
                   prod_name,
-                  style: TextStyle(fontSize: 11.1, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 14.1, fontWeight: FontWeight.bold),
                 ),
               ),
               Flexible(
@@ -469,7 +469,7 @@ class Single_prod extends StatelessWidget {
                                   child: Center(
                                     child: Icon(
                                       Icons.play_arrow,
-                                      size: 19,
+                                      size: 22,
                                       color: Colors.red,
                                     ),
                                   ),
@@ -481,7 +481,7 @@ class Single_prod extends StatelessWidget {
                               child: Text(
                             "watch video",
                             style: TextStyle(
-                                fontSize: 7, fontWeight: FontWeight.bold),
+                                fontSize: 10, fontWeight: FontWeight.bold),
                           )),
                         ],
                       ),

@@ -3,6 +3,7 @@ import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/widgets/listTile.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HelplinePage extends StatefulWidget {
   MealsListData mealsListData;
@@ -192,6 +193,7 @@ class _HelplinePageState extends State<HelplinePage> {
               prodPrice:"120",
               ind: 12,
               prodQuant: "tap to call",
+              funToCalNum: 1,
               
               ),
 

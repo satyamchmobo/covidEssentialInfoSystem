@@ -5,7 +5,7 @@ import 'package:covidessen/view/widgets/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:covidessen/theme/light_color.dart';
-
+import 'dart:io';
 class WhatsAppBotPage extends StatefulWidget {
   MealsListData mealsListData;
 
@@ -19,6 +19,25 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
   MealsListData mealsListData;
 
   _WhatsAppBotPageState({this.mealsListData});
+
+    void launchWhatsApp({
+    @required String phone,
+    @required String message,
+  }) async {
+    String url() {
+      if (Platform.isIOS) {
+        return "whatsapp://wa.me/$phone/?text=${Uri.parse(message)}";
+      } else {
+        return "whatsapp://send?phone=$phone.&text=${Uri.parse(message)}";
+      }
+    }
+
+    if (await canLaunch(url())) {
+      await launch(url());
+    } else {
+      throw 'Could not launch ${url()}';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -191,22 +210,19 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                ListItemCustom(
+                  prodName: "MicInsee whatsapp bot",
+                  prodPrice: " 12",
+                  ind: 12,
+                  prodQuant: " 8108982186",
+                
+                funToCalNum: 0,
             
-        
-
-              SizedBox(
-                height: 20,
-              ),
-
-              ListItemCustom( prodName: "MicInsee whatsapp bot",
-              prodPrice:" 12",
-              ind: 12,
-              prodQuant: " 8108982186",
-              
-              ),
-
-            ]
-          ),
+                ),
+              ]),
         ),
       ),
     );

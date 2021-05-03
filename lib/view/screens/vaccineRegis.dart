@@ -28,6 +28,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //===>>>starts==>>upper card with gradient/ icon/info about page/what it have /what it do etc
               SizedBox(
                 width: double.infinity,
                 height: 200,
@@ -188,6 +189,10 @@ class _VaccineRegisState extends State<VaccineRegis> {
                   ],
                 ),
               ),
+
+               //===>>>starts==>>upper card with gradient/ icon/info about page/what it have /what it do etc
+               //
+               //
               SizedBox(
                 height: 20,
               ),
@@ -241,6 +246,8 @@ class _VaccineRegisState extends State<VaccineRegis> {
               //     ),
               //   ],
               // ),
+              // 
+              // aarogya setu and covin cards in row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -281,6 +288,10 @@ class _VaccineRegisState extends State<VaccineRegis> {
                       )),
                 ],
               ),
+
+
+                 /// dny card ====== here
+                
             ],
           ),
         ),
@@ -480,6 +491,9 @@ class Single_prod extends StatelessWidget {
                   ),
                 ),
               ),
+
+
+           
             ],
           ),
         ),

@@ -291,6 +291,51 @@ class _VaccineRegisState extends State<VaccineRegis> {
 
 
                  /// dny card ====== here
+                 Container(
+              width: 500,
+              height: 200,
+              padding: new EdgeInsets.fromLTRB(0,30.0,0,0,),
+
+              child: Card(
+
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+
+                color: Colors.black26,
+                child: Column(
+                  children: [
+                    const ListTile(
+                            leading: Icon(
+                              Icons.contact_page_rounded,
+                              color: Colors.white70,
+                              size: 60,
+
+                            ),
+                            title: Text(
+                                'Hospital Name',
+                                style: TextStyle(fontSize: 30.0, color: Colors.white),
+                            ),
+                            subtitle: Text(
+                                'Address of Hospital',
+                                style: TextStyle(fontSize: 18.0,color: Colors.white)
+                            ),
+
+                    ),
+                    FlatButton(
+                            onPressed: (){},
+                            color: Colors.white,
+                            //hoverColor: Colors.lightBlueAccent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Text('HelpLine'),
+                    ),                   
+                  ],
+                ),
+
+              ),
+            ),
                 
             ],
           ),

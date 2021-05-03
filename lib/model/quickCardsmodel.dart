@@ -32,11 +32,7 @@ class MealsListData {
       imagePath: 'assets/card6.png',
       titleTxt: 'Helpline Numbers',
       kacl: 525,
-<<<<<<< HEAD
       meals: <String>['Ventilators,', 'Oxy Beds,', 'Oxy Cylandors'],
-=======
-      meals: <String>['180095874,', 'Curd,', 'Ghee'],
->>>>>>> 79f56871b5a0c71b8d2cc467e73f075e5b7e4ecf
       startColor: '#0E1D2C',
       endColor: '#A5B2BE',
     ),

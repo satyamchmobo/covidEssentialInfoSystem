@@ -1,6 +1,7 @@
 import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
+import 'package:covidessen/view/widgets/listTile.dart';
 import 'package:flutter/material.dart';
 
 class HelplinePage extends StatefulWidget {
@@ -186,6 +187,14 @@ class _HelplinePageState extends State<HelplinePage> {
               SizedBox(
                 height: 20,
               ),
+
+               ListItemCustom( prodName: "M.P. Helpline no.",
+              prodPrice:"120",
+              ind: 12,
+              prodQuant: "tap to call",
+              
+              ),
+
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceAround,
               //   children: [

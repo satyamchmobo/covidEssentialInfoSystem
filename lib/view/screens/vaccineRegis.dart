@@ -246,6 +246,8 @@ class _VaccineRegisState extends State<VaccineRegis> {
               //   ],
               // ),
               //
+
+              
               // aarogya setu and covin cards in row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -278,10 +280,11 @@ class _VaccineRegisState extends State<VaccineRegis> {
                         prod_old_price: "d",
                         fun: () async {
                           if (await canLaunch(
-                              "https://www.cowin.gov.in/home")) {
-                            await launch("https://www.cowin.gov.in/home");
+                              "https://selfregistration.cowin.gov.in/")) {
+                            await launch(
+                                "https://selfregistration.cowin.gov.in/");
                           } else {
-                            throw 'Could Not Launch ${"https://www.cowin.gov.in/home"}';
+                            throw 'Could Not Launch ${"https://selfregistration.cowin.gov.in/"}';
                           }
                         },
                       )),

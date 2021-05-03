@@ -1,8 +1,10 @@
 import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
+import 'package:covidessen/view/widgets/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:covidessen/theme/light_color.dart';
 
 class WhatsAppBotPage extends StatefulWidget {
   MealsListData mealsListData;
@@ -190,57 +192,15 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
               SizedBox(
                 height: 20,
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //   children: [
-              //     InkWell(
-              //       onTap: () async {
-              //         // setState(() {
-              //         //   proIdGlobal = widget.prod_details_id.substring(0, 4);
-              //         // });
-              //         if (await canLaunch("https://www.cowin.gov.in/home")) {
-              //           await launch("https://www.cowin.gov.in/home");
-              //         } else {
-              //           throw 'Could Not Launch ${"https://www.cowin.gov.in/home"}';
-              //         }
-              //         // launchWhatsApp(
-              //         //     message: "hello, want to know about $proIdGlobal ",
-              //         //     phone: 'tel:+91-7415585662');
-              //       },
-              //       child: Card(
-              //         child: Container(
-              //           color: Colors.blue.shade100,
-              //           height: 100,
-              //           width: 100,
-              //           child: Center(child: Text("COWIN")),
-              //         ),
-              //       ),
-              //     ),
-              //     InkWell(
-              //       onTap: () async {
-              //         await LaunchApp.openApp(
-              //           androidPackageName: 'nic.goi.aarogyasetu',
-              //           iosUrlScheme: 'pulsesecure://',
-              //           appStoreLink:
-              //               'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
-              //           // openStore: false
-              //         );
-              //         // Enter thr package name of the App you want to open and for iOS add the URLscheme to the Info.plist file.
-              //         // The second arguments decide wether the app redirects PlayStore or AppStore.
-              //         // For testing purpose you can enter com.instagram.android
-              //       },
-              //       child: Card(
-              //         child: Container(
-              //           color: Colors.orange.shade100,
-              //           height: 100,
-              //           width: 100,
-              //           child: Center(child: Text("AarogyaSetu")),
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-            ],
+
+              ListItemCustom( prodName: "MicInsee whatsapp bot",
+              prodPrice:" 12",
+              ind: 12,
+              prodQuant: " fdf",
+              
+              ),
+
+            ]
           ),
         ),
       ),

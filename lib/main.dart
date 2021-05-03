@@ -752,7 +752,10 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => VaccineRegis(mealsListData: mealsListData[0],)),
+                        MaterialPageRoute(
+                            builder: (context) => VaccineRegis(
+                                  mealsListData: mealsListData[0],
+                                )),
                       );
                     },
                     child: _categoryCard(mealsListData[0],
@@ -766,7 +769,10 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HelplinePage(mealsListData: mealsListData[1],)),
+                        MaterialPageRoute(
+                            builder: (context) => HelplinePage(
+                                  mealsListData: mealsListData[1],
+                                )),
                       );
                     },
                     child: _categoryCard(mealsListData[1],
@@ -789,10 +795,12 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => WhatsAppBotPage(mealsListData: mealsListData[2],)),
+                            builder: (context) => WhatsAppBotPage(
+                                  mealsListData: mealsListData[2],
+                                )),
                       );
                     },
-                    child: _categoryCard(mealsListData[2],    // whatsapp bot card
+                    child: _categoryCard(mealsListData[2], // whatsapp bot card
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),
@@ -803,7 +811,10 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ICMRlabspage(mealsListData: mealsListData[3],)),
+                        MaterialPageRoute(
+                            builder: (context) => ICMRlabspage(
+                                  mealsListData: mealsListData[3],
+                                )),
                       );
                     },
                     child: _categoryCard(mealsListData[3],

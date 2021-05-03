@@ -74,7 +74,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
                                 style: TextStyle(
                                   fontFamily: FitnessAppTheme.fontName,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   letterSpacing: 0.2,
                                   color: FitnessAppTheme.white,
                                 ),
@@ -82,7 +82,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
                               Expanded(
                                 child: Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8, bottom: 8),
+                                      const EdgeInsets.only(top: 14, bottom: 8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -93,7 +93,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 10,
+                                          fontSize: 14,
                                           letterSpacing: 0.2,
                                           color: FitnessAppTheme.white,
                                         ),
@@ -176,7 +176,6 @@ class _VaccineRegisState extends State<VaccineRegis> {
                         ),
                       ),
                     ),
-              
                     Positioned(
                       bottom: -5,
                       right: 10,
@@ -190,9 +189,9 @@ class _VaccineRegisState extends State<VaccineRegis> {
                 ),
               ),
 
-               //===>>>starts==>>upper card with gradient/ icon/info about page/what it have /what it do etc
-               //
-               //
+              //===>>>starts==>>upper card with gradient/ icon/info about page/what it have /what it do etc
+              //
+              //
               SizedBox(
                 height: 20,
               ),
@@ -246,7 +245,7 @@ class _VaccineRegisState extends State<VaccineRegis> {
               //     ),
               //   ],
               // ),
-              // 
+              //
               // aarogya setu and covin cards in row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -289,54 +288,50 @@ class _VaccineRegisState extends State<VaccineRegis> {
                 ],
               ),
 
-
-                 /// dny card ====== here
-                 Container(
-              width: 500,
-              height: 200,
-              padding: new EdgeInsets.fromLTRB(0,30.0,0,0,),
-
-              child: Card(
-
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+              /// dny card ====== here
+              Container(
+                width: 500,
+                height: 200,
+                padding: new EdgeInsets.fromLTRB(
+                  0,
+                  30.0,
+                  0,
+                  0,
                 ),
-
-                color: Colors.black26,
-                child: Column(
-                  children: [
-                    const ListTile(
-                            leading: Icon(
-                              Icons.contact_page_rounded,
-                              color: Colors.white70,
-                              size: 60,
-
-                            ),
-                            title: Text(
-                                'Hospital Name',
-                                style: TextStyle(fontSize: 30.0, color: Colors.white),
-                            ),
-                            subtitle: Text(
-                                'Address of Hospital',
-                                style: TextStyle(fontSize: 18.0,color: Colors.white)
-                            ),
-
-                    ),
-                    FlatButton(
-                            onPressed: (){},
-                            color: Colors.white,
-                            //hoverColor: Colors.lightBlueAccent,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Text('HelpLine'),
-                    ),                   
-                  ],
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  color: Colors.black26,
+                  child: Column(
+                    children: [
+                      const ListTile(
+                        leading: Icon(
+                          Icons.contact_page_rounded,
+                          color: Colors.white70,
+                          size: 60,
+                        ),
+                        title: Text(
+                          'Hospital Name',
+                          style: TextStyle(fontSize: 30.0, color: Colors.white),
+                        ),
+                        subtitle: Text('Address of Hospital',
+                            style:
+                                TextStyle(fontSize: 18.0, color: Colors.white)),
+                      ),
+                      FlatButton(
+                        onPressed: () {},
+                        color: Colors.white,
+                        //hoverColor: Colors.lightBlueAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Text('HelpLine'),
+                      ),
+                    ],
+                  ),
                 ),
-
               ),
-            ),
-                
             ],
           ),
         ),
@@ -536,9 +531,6 @@ class Single_prod extends StatelessWidget {
                   ),
                 ),
               ),
-
-
-           
             ],
           ),
         ),

@@ -4,15 +4,16 @@ import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:flutter/material.dart';
 
 class HelplinePage extends StatefulWidget {
-    MealsListData mealsListData;
+  MealsListData mealsListData;
 
   HelplinePage({this.mealsListData});
   @override
-  _HelplinePageState createState() => _HelplinePageState(mealsListData: mealsListData);
+  _HelplinePageState createState() =>
+      _HelplinePageState(mealsListData: mealsListData);
 }
 
 class _HelplinePageState extends State<HelplinePage> {
-   MealsListData mealsListData;
+  MealsListData mealsListData;
 
   _HelplinePageState({this.mealsListData});
   @override
@@ -68,7 +69,7 @@ class _HelplinePageState extends State<HelplinePage> {
                                 style: TextStyle(
                                   fontFamily: FitnessAppTheme.fontName,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   letterSpacing: 0.2,
                                   color: FitnessAppTheme.white,
                                 ),
@@ -76,7 +77,7 @@ class _HelplinePageState extends State<HelplinePage> {
                               Expanded(
                                 child: Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8, bottom: 8),
+                                      const EdgeInsets.only(top: 14, bottom: 8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -87,7 +88,7 @@ class _HelplinePageState extends State<HelplinePage> {
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 10,
+                                          fontSize: 14,
                                           letterSpacing: 0.2,
                                           color: FitnessAppTheme.white,
                                         ),
@@ -170,7 +171,6 @@ class _HelplinePageState extends State<HelplinePage> {
                         ),
                       ),
                     ),
-              
                     Positioned(
                       bottom: -5,
                       right: 10,
@@ -236,7 +236,6 @@ class _HelplinePageState extends State<HelplinePage> {
               //     ),
               //   ],
               // ),
-         
             ],
           ),
         ),

@@ -2,16 +2,18 @@ import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:flutter/material.dart';
+
 class ICMRlabspage extends StatefulWidget {
   MealsListData mealsListData;
 
   ICMRlabspage({this.mealsListData});
-    @override
-  _ICMRlabspageState createState() => _ICMRlabspageState(mealsListData: mealsListData);
+  @override
+  _ICMRlabspageState createState() =>
+      _ICMRlabspageState(mealsListData: mealsListData);
 }
 
 class _ICMRlabspageState extends State<ICMRlabspage> {
-    MealsListData mealsListData;
+  MealsListData mealsListData;
 
   _ICMRlabspageState({this.mealsListData});
   @override
@@ -67,7 +69,7 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
                                 style: TextStyle(
                                   fontFamily: FitnessAppTheme.fontName,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   letterSpacing: 0.2,
                                   color: FitnessAppTheme.white,
                                 ),
@@ -75,7 +77,7 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
                               Expanded(
                                 child: Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8, bottom: 8),
+                                      const EdgeInsets.only(top: 14, bottom: 8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -86,7 +88,7 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 10,
+                                          fontSize: 14,
                                           letterSpacing: 0.2,
                                           color: FitnessAppTheme.white,
                                         ),
@@ -169,7 +171,6 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
                         ),
                       ),
                     ),
-              
                     Positioned(
                       bottom: -5,
                       right: 10,
@@ -235,7 +236,6 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
               //     ),
               //   ],
               // ),
-         
             ],
           ),
         ),

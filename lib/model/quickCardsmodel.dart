@@ -16,6 +16,7 @@ class MealsListData {
   int kacl;
 
   static List<MealsListData> tabIconsList = <MealsListData>[
+   //Vaccination card
     MealsListData(
       imagePath: 'assets/card7.png',
       titleTxt: 'Vaccine Registration',
@@ -28,6 +29,8 @@ class MealsListData {
       startColor: '#F58420',
       endColor: '#FCBF95',
     ),
+
+    //Helpline card
     MealsListData(
       imagePath: 'assets/card6.png',
       titleTxt: 'Helpline Numbers',
@@ -36,6 +39,7 @@ class MealsListData {
       startColor: '#0E1D2C',
       endColor: '#A5B2BE',
     ),
+    //Whatsapp card
     MealsListData(
       imagePath: 'assets/card8.png',
       titleTxt: 'Whatsapp Bots',
@@ -44,6 +48,7 @@ class MealsListData {
       startColor: '#20AD43',
       endColor: '#A5B2BE',
     ),
+    //ICMR card
     MealsListData(
       imagePath: 'assets/card9.png',
       titleTxt: 'ICMR Labs',

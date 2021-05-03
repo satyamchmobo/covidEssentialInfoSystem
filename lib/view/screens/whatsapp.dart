@@ -59,8 +59,9 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                           ),
                         ),
                         child: Padding(
+                          //whatsapp bots text
                           padding: const EdgeInsets.only(
-                              top: 54, left: 10, right: 0, bottom: 8),
+                              top: 54, left: 20, right: 0, bottom: 8),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +72,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                                 style: TextStyle(
                                   fontFamily: FitnessAppTheme.fontName,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   letterSpacing: 0.2,
                                   color: FitnessAppTheme.white,
                                 ),
@@ -79,7 +80,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                               Expanded(
                                 child: Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8, bottom: 8),
+                                      const EdgeInsets.only(top: 14, bottom: 8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -90,7 +91,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 10,
+                                          fontSize: 14,
                                           letterSpacing: 0.2,
                                           color: FitnessAppTheme.white,
                                         ),
@@ -185,6 +186,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                   ],
                 ),
               ),
+
               SizedBox(
                 height: 20,
               ),

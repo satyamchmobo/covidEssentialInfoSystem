@@ -795,7 +795,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             builder: (context) => WhatsAppBotPage(mealsListData: mealsListData[2],)),
                       );
                     },
-                    child: _categoryCard(mealsListData[2],    // vaccination bot card
+                    child: _categoryCard(mealsListData[2],    // whatsapp bot card
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),

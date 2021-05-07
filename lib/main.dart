@@ -12,9 +12,12 @@ import 'package:covidessen/theme/text_styles.dart';
 import 'package:covidessen/theme/extention.dart';
 import 'package:covidessen/theme/theme.dart';
 import 'package:covidessen/theme/light_color.dart';
+import 'package:firebase_core/firebase_core.dart';
 // import 'package:zealth_symptomapp/view/severty.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

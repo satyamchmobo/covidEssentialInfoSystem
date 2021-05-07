@@ -8,36 +8,48 @@ import 'package:covidessen/theme/light_color.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ListItemCustom extends StatefulWidget {
+  final double imageSize;
   final String prodPrice;
   final String prodName;
   final String prodQuant;
   final int funToCalNum;
   final int ind;
+  final String imagePath;
 
   ListItemCustom(
       {this.ind,
+      this.imagePath,
       this.prodPrice,
       this.prodName,
       this.prodQuant,
-      this.funToCalNum});
+      this.funToCalNum,
+      this.imageSize});
 
   @override
   _ListItemCustomState createState() => _ListItemCustomState(
       ind: ind,
+      imagePath: imagePath,
       prodName: prodName,
       prodPrice: prodPrice,
       prodQuant: prodQuant,
+      imageSize: imageSize,
       funToCalNum: funToCalNum);
 }
 
 class _ListItemCustomState extends State<ListItemCustom> {
+  final double imageSize;
+
   final String prodPrice;
   final String prodName;
   final String prodQuant;
   final int ind;
+
   final int funToCalNum;
+  final String imagePath;
 
   _ListItemCustomState({
+    this.imageSize,
+    this.imagePath,
     this.funToCalNum,
     this.ind,
     this.prodPrice,
@@ -62,7 +74,19 @@ class _ListItemCustomState extends State<ListItemCustom> {
     return color;
   }
 
-      void launchWhatsApp({
+  // final String phone1 = 'tel:+919179772425';
+  // final String phone2 = 'tel:+919826853640';
+  // final String phone3 = 'tel:+917415585662';
+
+  void _callPhone1(String phone1) async {
+    if (await canLaunch(phone1)) {
+      await launch(phone1);
+    } else {
+      throw 'Could not Call Phone';
+    }
+  }
+
+  void launchWhatsApp({
     @required String phone,
     @required String message,
   }) async {
@@ -80,7 +104,6 @@ class _ListItemCustomState extends State<ListItemCustom> {
       throw 'Could not launch ${url()}';
     }
   }
-
 
 // final String phone = 'tel:+1 234 517 8991';
 
@@ -151,19 +174,19 @@ class _ListItemCustomState extends State<ListItemCustom> {
               ],
             ),
             trailing: InkWell(
-              onTap: funToCalNum==0?() async {
-           
-                launchWhatsApp(message: "COVID", phone: "+1 234 517 8991");
-         
-            
-              }:() async {
-                    canLaunch('tel:+91-9179772425');
-                  },
-              
+              onTap: funToCalNum == 0
+                  ? () async {
+                      launchWhatsApp(
+                          message: "COVID", phone: "+1 234 517 8991");
+                    }
+                  : () {
+                      // canLaunch('tel:+91-9179772425');
+                      _callPhone1('tel:+91-9179772425');
+                    },
               child: Container(
-                height: 60,
-                width: 60,
-                child: Image.asset("assets/whatsapp (1).png"),
+                height: imageSize,
+                width: imageSize,
+                child: Image.asset(imagePath),
               ),
             ),
           ),

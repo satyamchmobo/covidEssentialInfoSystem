@@ -2,10 +2,13 @@ import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/widgets/listTile.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:covidessen/theme/light_color.dart';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class WhatsAppBotPage extends StatefulWidget {
   MealsListData mealsListData;
 
@@ -20,7 +23,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
 
   _WhatsAppBotPageState({this.mealsListData});
 
-    void launchWhatsApp({
+  void launchWhatsApp({
     @required String phone,
     @required String message,
   }) async {
@@ -38,6 +41,13 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
       throw 'Could not launch ${url()}';
     }
   }
+
+  // Copyright 2019 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+// ignore_for_file: public_member_api_docs
+
+// @dart=2.9
 
   @override
   Widget build(BuildContext context) {
@@ -213,15 +223,52 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                 SizedBox(
                   height: 20,
                 ),
-                ListItemCustom(
-                  prodName: "MicInsee whatsapp bot",
-                  prodPrice: " 12",
-                  ind: 12,
-                  prodQuant: " 8108982186",
-                
-                funToCalNum: 0,
-            
+
+                Container(
+                  height: 600,
+                  child: StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection("whatsapbots")
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      return !snapshot.hasData
+                          ? Text('PLease Wait')
+                          : ListView.builder(
+                              itemCount: snapshot.data.docs.length,
+                              itemBuilder: (context, index) {
+                                print(snapshot.data.docs.length);
+                                print("=====>");
+                                DocumentSnapshot whatsappbotdocsnap =
+                                    snapshot.data.docs[index];
+                                return 
+                                
+                                 ListItemCustom(
+                                  prodName: whatsappbotdocsnap['botname'],
+                                  prodQuant: whatsappbotdocsnap['botWhatsAppNo'],
+                                  imageSize: 60,
+                                  imagePath: "assets/whatsapp (1).png",
+                                  // prodQuant: " 8108982186",
+                                  //  pr
+
+                                  funToCalNum: 0,
+                                );
+                              },
+                            );
+
+                    },
+                  ),
                 ),
+
+                // ListItemCustom(
+                //   prodName: "MicInsee whatsapp bot",
+                //   prodPrice: " 12",
+                //   imageSize: 60,
+                //   imagePath: "assets/whatsapp (1).png",
+                //   prodQuant: " 8108982186",
+
+                // funToCalNum: 0,
+
+                // ),
               ]),
         ),
       ),

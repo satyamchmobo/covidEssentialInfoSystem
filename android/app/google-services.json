@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "39576006074",
+    "project_id": "covidessentials-f06de",
+    "storage_bucket": "covidessentials-f06de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39576006074:android:61077482f5ea5145bbc183",
+        "android_client_info": {
+          "package_name": "com.example.covidessen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39576006074-iu19mck0qphj9lapnbea68jo1aau6g4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrX-J5-UUbLjbom-05_-PTZeKxmErf-Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39576006074-iu19mck0qphj9lapnbea68jo1aau6g4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -190,8 +190,11 @@ class _HelplinePageState extends State<HelplinePage> {
               ),
 
                ListItemCustom( prodName: "M.P. Helpline no.",
+               imagePath:"assets/call.png",
               prodPrice:"120",
               ind: 12,
+            
+          imageSize: 40,
               prodQuant: "tap to call",
               funToCalNum: 1,
               

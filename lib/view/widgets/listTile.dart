@@ -1,44 +1,44 @@
+import 'dart:io';
+
 import 'dart:math';
 
 import 'package:covidessen/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:covidessen/theme/light_color.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class ListItemCustom extends StatefulWidget {
-
   final String prodPrice;
   final String prodName;
   final String prodQuant;
+  final int funToCalNum;
   final int ind;
 
-  ListItemCustom({
-
-    this.ind,
-    this.prodPrice,
-    this.prodName,
-    this.prodQuant,
-  });
+  ListItemCustom(
+      {this.ind,
+      this.prodPrice,
+      this.prodName,
+      this.prodQuant,
+      this.funToCalNum});
 
   @override
   _ListItemCustomState createState() => _ListItemCustomState(
-        ind: ind,
-        prodName: prodName,
-        prodPrice: prodPrice,
-        prodQuant: prodQuant,
-    
-      );
+      ind: ind,
+      prodName: prodName,
+      prodPrice: prodPrice,
+      prodQuant: prodQuant,
+      funToCalNum: funToCalNum);
 }
 
 class _ListItemCustomState extends State<ListItemCustom> {
- 
   final String prodPrice;
   final String prodName;
   final String prodQuant;
   final int ind;
+  final int funToCalNum;
 
   _ListItemCustomState({
- 
+    this.funToCalNum,
     this.ind,
     this.prodPrice,
     this.prodName,
@@ -61,6 +61,28 @@ class _ListItemCustomState extends State<ListItemCustom> {
     var color = colorList[random.nextInt(colorList.length)];
     return color;
   }
+
+      void launchWhatsApp({
+    @required String phone,
+    @required String message,
+  }) async {
+    String url() {
+      if (Platform.isIOS) {
+        return "whatsapp://wa.me/$phone/?text=${Uri.parse(message)}";
+      } else {
+        return "whatsapp://send?phone=$phone.&text=${Uri.parse(message)}";
+      }
+    }
+
+    if (await canLaunch(url())) {
+      await launch(url());
+    } else {
+      throw 'Could not launch ${url()}';
+    }
+  }
+
+
+// final String phone = 'tel:+1 234 517 8991';
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +129,17 @@ class _ListItemCustomState extends State<ListItemCustom> {
                 ),
               ),
             ),
-            title: Text(prodName, style: TextStyles.title.copyWith(fontWeight: FontWeight.bold,color: LightColor.titleTextColor)),
+            title: Text(prodName,
+                style: TextStyles.title.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: LightColor.titleTextColor)),
             subtitle: Row(
               children: [
                 Text(
                   "${prodQuant}",
-                  style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
+                  style: TextStyles.bodySm.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: LightColor.subTitleTextColor),
                 ),
                 SizedBox(
                   width: 5,
@@ -124,13 +151,19 @@ class _ListItemCustomState extends State<ListItemCustom> {
               ],
             ),
             trailing: InkWell(
-              onTap: () async {
-     
-              },
-              child: Icon(
-                Icons.delete,
-                size: 25,
-                color: Colors.yellow[800],
+              onTap: funToCalNum==0?() async {
+           
+                launchWhatsApp(message: "COVID", phone: "+1 234 517 8991");
+         
+            
+              }:() async {
+                    canLaunch('tel:+91-9179772425');
+                  },
+              
+              child: Container(
+                height: 60,
+                width: 60,
+                child: Image.asset("assets/whatsapp (1).png"),
               ),
             ),
           ),

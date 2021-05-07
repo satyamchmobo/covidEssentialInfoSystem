@@ -3,6 +3,7 @@ import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VaccineRegis extends StatefulWidget {
   MealsListData mealsListData;
@@ -247,49 +248,93 @@ class _VaccineRegisState extends State<VaccineRegis> {
               // ),
               //
 
-              
               // aarogya setu and covin cards in row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                      height: 270,
-                      width: 180,
-                      child: Single_prod(
-                        prod_pricture1: "assets/Aarogya_Setu_App_Logo.png",
-                        prod_name: "Aarogya Setu",
-                        prod_price: " 3",
-                        prod_old_price: "d",
-                        fun: () async {
-                          await LaunchApp.openApp(
-                            androidPackageName: 'nic.goi.aarogyasetu',
-                            iosUrlScheme: 'pulsesecure://',
-                            appStoreLink:
-                                'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
-                            // openStore: false
+              Container(
+                height: 700,
+                width: double.infinity,
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection('vaccinationCenters')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    return !snapshot.hasData
+                        ? Text('PLease Wait')
+                        : GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2),
+                            itemCount: snapshot.data.docs.length,
+                            itemBuilder: (context, index) {
+                              print(snapshot.data.docs.length);
+                              print("=====>");
+                              DocumentSnapshot vaccineColDocsSnapshot =
+                                  snapshot.data.docs[index];
+                              return Container(
+                                  height: 270,
+                                  width: 180,
+                                  child: Single_prod(
+                                    prod_pricture1:
+                                        vaccineColDocsSnapshot['name'],
+                                    prod_name: vaccineColDocsSnapshot['url'],
+                                    prod_price: " 3",
+                                    prod_old_price: "d",
+                                    fun: () async {
+                                      await LaunchApp.openApp(
+                                        androidPackageName:
+                                            'nic.goi.aarogyasetu',
+                                        iosUrlScheme: 'pulsesecure://',
+                                        appStoreLink:
+                                            'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
+                                        // openStore: false
+                                      );
+                                    },
+                                  ));
+                            },
                           );
-                        },
-                      )),
-                  Container(
-                      height: 270,
-                      width: 180,
-                      child: Single_prod(
-                        prod_pricture1: "assets/CoWIN_New_Logo.jpg",
-                        prod_name: "Cowin",
-                        prod_price: " 3",
-                        prod_old_price: "d",
-                        fun: () async {
-                          if (await canLaunch(
-                              "https://selfregistration.cowin.gov.in/")) {
-                            await launch(
-                                "https://selfregistration.cowin.gov.in/");
-                          } else {
-                            throw 'Could Not Launch ${"https://selfregistration.cowin.gov.in/"}';
-                          }
-                        },
-                      )),
-                ],
+                  },
+                ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //   children: [
+              //     Container(
+              //         height: 270,
+              //         width: 180,
+              //         child: Single_prod(
+              //           prod_pricture1: "assets/Aarogya_Setu_App_Logo.png",
+              //           prod_name: "Aarogya Setu",
+              //           prod_price: " 3",
+              //           prod_old_price: "d",
+              //           fun: () async {
+              //             await LaunchApp.openApp(
+              //               androidPackageName: 'nic.goi.aarogyasetu',
+              //               iosUrlScheme: 'pulsesecure://',
+              //               appStoreLink:
+              //                   'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
+              //               // openStore: false
+              //             );
+              //           },
+              //         )),
+              //     Container(
+              //         height: 270,
+              //         width: 180,
+              //         child: Single_prod(
+              //           prod_pricture1: "assets/CoWIN_New_Logo.jpg",
+              //           prod_name: "Cowin",
+              //           prod_price: " 3",
+              //           prod_old_price: "d",
+              //           fun: () async {
+              //             if (await canLaunch(
+              //                 "https://selfregistration.cowin.gov.in/")) {
+              //               await launch(
+              //                   "https://selfregistration.cowin.gov.in/");
+              //             } else {
+              //               throw 'Could Not Launch ${"https://selfregistration.cowin.gov.in/"}';
+              //             }
+              //           },
+              //         )),
+              //   ],
+              // ),
 
               /// dny card ====== here
               Container(

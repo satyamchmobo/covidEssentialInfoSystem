@@ -1,9 +1,10 @@
-import 'dart:convert';
-class Data{
- // final String location;
-  //final String number;
+
+
+class HelpineNoModel{
+ final String location;
+  final String number;
   
- Data({this.location,this.number});
+ HelpineNoModel({this.location,this.number});
 
   // factory Data.fromJson(Map<String, dynamic> json){
   //   location : json["loc"] == null ? null : json["loc"];
@@ -14,7 +15,7 @@ class Data{
   //   ""
 
   // }
- factory Data.fromJson(Map<String, dynamic> json) => Data(
+ factory HelpineNoModel.fromJson(Map<String, dynamic> json) => HelpineNoModel(
         location :  json["loc"] == null ? null : json["loc"],
         number : json["number"] == null ? null : json["number"],
       );

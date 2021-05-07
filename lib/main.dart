@@ -1,7 +1,7 @@
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/helpline.dart';
 import 'package:covidessen/view/screens/icmrlabs.dart';
-import 'package:covidessen/view/screens/plasma.dart';
+// import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/whatsapp.dart';
 import 'package:flutter/material.dart';
@@ -367,12 +367,12 @@ class _SymptomsPageState extends State<SymptomsPage> {
                               onTap: () {
                                 if (checkStatus) {
                                   print(tmpArray);
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            HomeScreen()),
-                                  );
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //       builder: (context) =>
+                                  //         //  HomeScreen()),
+                                  // );
                                 }
                               },
                               child: Container(
@@ -817,7 +817,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => ICMRlabspage(
-                                  mealsListData: mealsListData[3],
+                                  // mealsListData: mealsListData[3],
                                 )),
                       );
                     },

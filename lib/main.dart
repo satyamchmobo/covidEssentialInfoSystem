@@ -128,7 +128,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
               child: Container(
                 height: 21,
                 width: 30,
-                child: Image.asset("assets/Home.png"),
+                child: Image.asset("assets/home-web-button-outline.png"),
               ),
             ),
             title: Text(
@@ -145,11 +145,14 @@ class _SymptomsPageState extends State<SymptomsPage> {
               child: Container(
                 height: 21,
                 width: 30,
-                child: Image.asset("assets/thermometer 1.png"),
+                child: Image.asset(
+                  "assets/group.png",
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             title: Text(
-              "Symptoms",
+              "Team",
               style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
@@ -162,34 +165,37 @@ class _SymptomsPageState extends State<SymptomsPage> {
               child: Container(
                 height: 21,
                 width: 30,
-                child: Image.asset("assets/medical jar 1.png"),
+                child: Image.asset(
+                  "assets/information.png",
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             title: Text(
-              "Medication  ",
+              "Disclaimer",
               style: GoogleFonts.poppins(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   color: Color(0xFF3E5061)),
             ),
           ),
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 7, top: 10),
-              child: Container(
-                height: 21,
-                width: 30,
-                child: Image.asset("assets/Activity.png"),
-              ),
-            ),
-            title: Text(
-              "Reports",
-              style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF3E5061)),
-            ),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Padding(
+          //     padding: const EdgeInsets.only(bottom: 7, top: 10),
+          //     child: Container(
+          //       height: 21,
+          //       width: 30,
+          //       child: Image.asset("assets/Activity.png"),
+          //     ),
+          //   ),
+          //   title: Text(
+          //     "Reports",
+          //     style: GoogleFonts.poppins(
+          //         fontSize: 12,
+          //         fontWeight: FontWeight.w500,
+          //         color: Color(0xFF3E5061)),
+          //   ),
+          // ),
         ],
         onTap: (index) {
           setState(() {

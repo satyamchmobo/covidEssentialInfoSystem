@@ -28,9 +28,9 @@ class _HelpLineState extends State<HelpLine> {
         data.add(HelpineNoModel.fromJson(dataJsonelemnet));
       }
     }
-    setState(() {
+  
       _data = data;
-    });
+    
 
     print(data);
     print("============================>>>>");
@@ -40,8 +40,9 @@ class _HelpLineState extends State<HelpLine> {
 
   @override
   initState() {
+     getData();
     super.initState();
-    getData();
+   
   }
 
   @override

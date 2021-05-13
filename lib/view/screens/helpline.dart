@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
@@ -188,17 +189,47 @@ class _HelplinePageState extends State<HelplinePage> {
               SizedBox(
                 height: 20,
               ),
+              Container(
+                height: 600,
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection("helplineNumbers")
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    return !snapshot.hasData
+                        ? Text('PLease Wait')
+                        : ListView.builder(
+                            itemCount: snapshot.data.docs.length,
+                            itemBuilder: (context, index) {
+                              print(snapshot.data.docs.length);
+                              print("=====>");
+                              DocumentSnapshot whatsappbotdocsnap =
+                                  snapshot.data.docs[index];
+                              return ListItemCustom(
+                                prodName: whatsappbotdocsnap['stateName'],
+                                prodQuant: whatsappbotdocsnap['helplineNo'],
+                                ind: 12,
+                                imageSize: 40,
+                                imagePath: "assets/call.png",
 
-               ListItemCustom( prodName: "M.P. Helpline no.",
-               imagePath:"assets/call.png",
-              prodPrice:"120",
-              ind: 12,
-            
-          imageSize: 40,
-              prodQuant: "tap to call",
-              funToCalNum: 1,
-              
+                                // prodQuant: " 8108982186",
+                                //  pr
+
+                                funToCalNum: 1,
+                              );
+                            },
+                          );
+                  },
+                ),
               ),
+
+              // ListItemCustom(
+              //   prodName: "M.P. Helpline no.",
+              //   imagePath: "assets/call.png",
+              //   prodPrice: "120",
+              //   prodQuant: "tap to call",
+              //   funToCalNum: 1,
+              // ),
 
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceAround,

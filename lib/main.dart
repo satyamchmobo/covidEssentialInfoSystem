@@ -5,6 +5,7 @@ import 'package:covidessen/view/screens/plasma.dart';
 // import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/whatsapp.dart';
+import 'package:covidessen/view/screens/disclaimer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: SymptomsPage(),
     );
@@ -162,13 +163,19 @@ class _SymptomsPageState extends State<SymptomsPage> {
           BottomNavigationBarItem(
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 7, top: 10),
-              child: Container(
-                height: 21,
-                width: 30,
-                child: Image.asset(
-                  "assets/information.png",
-                  fit: BoxFit.contain,
+              child: GestureDetector(
+                child: Container(
+                  height: 21,
+                  width: 30,
+                  child: Image.asset(
+                    "assets/information.png",
+                    fit: BoxFit.contain,
+                  ),
                 ),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => Disclaimer_page()));
+                },
               ),
             ),
             title: Text(
@@ -201,6 +208,8 @@ class _SymptomsPageState extends State<SymptomsPage> {
           setState(() {
             _currentNav = index;
           });
+          // Navigator.of(context)
+          //     .push(MaterialPageRoute(builder: (_) => Disclaimer_page()));
         },
       ),
       body: SingleChildScrollView(
@@ -221,15 +230,16 @@ class _SymptomsPageState extends State<SymptomsPage> {
                           child: Image.asset("assets/Shape.png"),
                         ),
                         SizedBox(
-                          width: 123,
+                          width: 103,
                         ),
                         Text(
                           "Fight&Win",
                           style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          )),
+                            textStyle: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                       ],
                     ),

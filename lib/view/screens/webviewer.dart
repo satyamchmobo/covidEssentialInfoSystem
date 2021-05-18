@@ -11,7 +11,7 @@ class Web extends StatelessWidget {
       title: 'Welcome to flutter',
       home: Scaffold(        
         body: WebView(
-          initialUrl: 'https://en.wikipedia.org',
+          initialUrl: url,
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),

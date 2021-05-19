@@ -206,8 +206,8 @@ class _HelplinePageState extends State<HelplinePage> {
                               DocumentSnapshot whatsappbotdocsnap =
                                   snapshot.data.docs[index];
                               return ListItemCustom(
-                                prodName: whatsappbotdocsnap['stateName'],
-                                prodQuant: whatsappbotdocsnap['helplineNo'],
+                                prodName: whatsappbotdocsnap['city'],
+                                prodQuant: whatsappbotdocsnap['helpline'],
                                 ind: 12,
                                 imageSize: 40,
                                 imagePath: "assets/call.png",

@@ -70,7 +70,11 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   //mealsListData.titleTxt,
+<<<<<<< Updated upstream
                                   "writer Title here",
+=======
+                                  "Fuck You",
+>>>>>>> Stashed changes
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
@@ -82,11 +86,18 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                 ),
                                 Expanded(
                                   child: Padding(
+<<<<<<< Updated upstream
                                     padding: const EdgeInsets.only(
                                         top: 14, bottom: 8),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
+=======
+                                    padding:
+                                        const EdgeInsets.only(top: 14, bottom: 8),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+>>>>>>> Stashed changes
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
@@ -94,8 +105,12 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                           //mealsListData.meals.join('\n')
                                           "writer sub Title here",
                                           style: TextStyle(
+<<<<<<< Updated upstream
                                             fontFamily:
                                                 FitnessAppTheme.fontName,
+=======
+                                            fontFamily: FitnessAppTheme.fontName,
+>>>>>>> Stashed changes
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
                                             letterSpacing: 0.2,
@@ -174,8 +189,12 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                             width: 120,
                             height: 120,
                             decoration: BoxDecoration(
+<<<<<<< Updated upstream
                               color:
                                   FitnessAppTheme.nearlyWhite.withOpacity(0.2),
+=======
+                              color: FitnessAppTheme.nearlyWhite.withOpacity(0.2),
+>>>>>>> Stashed changes
                               shape: BoxShape.circle,
                             ),
                           ),
@@ -192,6 +211,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                       )
                     ],
                   ),
+<<<<<<< Updated upstream
                 ),
                 SizedBox(
                   height: 20,
@@ -256,8 +276,85 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                   ),
                 ),
               ]),
+=======
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+
+        
+        
+        
+        
+        //====================================================>
+        
+        Container(
+          height: 800,
+          width: 500,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+
+                    //size of cards
+                    maxCrossAxisExtent: 200,
+                    childAspectRatio: 2 / 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 30),
+                itemCount: myProducts.length,
+                itemBuilder: (BuildContext ctx, index) {
+                  return InkWell(
+                    onTap: () async {
+                      if (await canLaunch(myProducts[index]["url"])) {
+                        await launch(myProducts[index]["url"]);
+                      } else {
+                        throw 'Could Not Launch ${myProducts[index]["url"]}';
+                      }
+                    },
+                    child: Container(
+                      child: Card(
+                          child: Column(
+                             children: [
+                              Container(                                              
+                                child: IconButton(
+                                icon: Image.asset('assets/twitter_icon.png',),            
+                                iconSize: 60,      
+                                                  
+                                onPressed: (){
+                                    // Navigator.of(context)
+                                    // .push(MaterialPageRoute(builder:(_)=>Web(url: myProducts[index]["url"],)));
+                                 
+                                }
+                    ),       
+                    
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Text(myProducts[index]["id"]),
+                    ),
+                            ],
+                          ),
+                    
+                  ),
+                      // alignment: Alignment.center,
+                      // child: Text(myProducts[index]["id"]),
+                      // decoration: BoxDecoration(
+                      //     color: Colors.purple[100],
+                      //     borderRadius: BorderRadius.circular(30)),
+                    ),
+                  );
+                }),
+          ),
+>>>>>>> Stashed changes
         ),
+               ] ),
+            ),
       ),
+<<<<<<< Updated upstream
     );
+=======
+          );
+    
+>>>>>>> Stashed changes
   }
 }

@@ -23,8 +23,8 @@ class _twittercardState extends State<twittercard> {
                             icon: Image.asset('images/twitter_icon.png',),            
                             iconSize: 60,                                                   
                               onPressed: (){   
-                                Navigator.of(context)
-                                  .push(MaterialPageRoute(builder:(_)=>Web()));                          
+                                // Navigator.of(context)
+                                //   .push(MaterialPageRoute(builder:(_)=>Web()));                          
                                 }
                          ),
                     ),

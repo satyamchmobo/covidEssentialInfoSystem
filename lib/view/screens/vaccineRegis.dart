@@ -24,7 +24,8 @@ class _VaccineRegisState extends State<VaccineRegis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Center(
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,

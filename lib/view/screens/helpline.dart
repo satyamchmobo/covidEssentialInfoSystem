@@ -22,7 +22,8 @@ class _HelplinePageState extends State<HelplinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Center(
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,

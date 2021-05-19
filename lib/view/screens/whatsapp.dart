@@ -52,7 +52,8 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Center(
           child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
@@ -240,11 +241,10 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                                 print("=====>");
                                 DocumentSnapshot whatsappbotdocsnap =
                                     snapshot.data.docs[index];
-                                return 
-                                
-                                 ListItemCustom(
+                                return ListItemCustom(
                                   prodName: whatsappbotdocsnap['botname'],
-                                  prodQuant: whatsappbotdocsnap['botWhatsAppNo'],
+                                  prodQuant:
+                                      whatsappbotdocsnap['botWhatsAppNo'],
                                   imageSize: 60,
                                   imagePath: "assets/whatsapp (1).png",
                                   // prodQuant: " 8108982186",
@@ -254,7 +254,6 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                                 );
                               },
                             );
-
                     },
                   ),
                 ),

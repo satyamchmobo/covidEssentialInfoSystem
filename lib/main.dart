@@ -109,16 +109,82 @@ class _SymptomsPageState extends State<SymptomsPage> {
     //       ),
     // ),
     // 'hintext': Text("Search symptoms")
-  };
+  };  
   List listOfWid = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
+    // ===================> Variable Section <=====================
+    String AccName ="Dnyaneshwar ";
+    String AccEmail = "wakshe2@gmail.com";
     listOfWid.clear();
-    map.forEach((key, value) => listOfWid.add(value));
-
+    map.forEach((key, value) => listOfWid.add(value)); 
     boolVar = false;
+    // ===================> Variable Section <=====================
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.grey,),
+        title: Text(
+          "Fight&Win",
+          style:            
+             GoogleFonts.poppins(color: Colors.grey,
+            fontSize: 20,
+            fontWeight: FontWeight.w600),           
+        
+          ),
+          backgroundColor: Colors.white,
+          
+         
+      ),
+      //============================> Drawee Start<=================================
+      drawer: Drawer(
+
+        child: ListView(
+          padding: EdgeInsets.zero, 
+          children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(AccName), 
+                accountEmail: Text(AccEmail),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.orange,
+                  child: Text('D',
+                  style: TextStyle(fontSize: 40),),
+
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                 gradient: LinearGradient( colors: [Color(0xFF33FFCC),Color(0xFF33CCFF),Color(0xFF6666FF) ]),
+                ),
+                
+              ),
+              //============================> Inner List Start<=================================
+              ListTile(
+                leading: Icon(Icons.home,),title: Text('Home'),
+                
+                onTap: (){
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Setting'),
+                onTap: (){
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.contacts),
+                title: Text('About Us'),
+                onTap: (){
+                  Navigator.pop(context);
+                },
+              ),            
+
+            
+          ],
+        ),
+      ),
+      //============================> Drawee Close<=================================
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentNav,
         type: BottomNavigationBarType.fixed,
@@ -222,27 +288,27 @@ class _SymptomsPageState extends State<SymptomsPage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(top: 50, left: 21, right: 10),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 28,
-                          width: 22,
-                          child: Image.asset("assets/Shape.png"),
-                        ),
-                        SizedBox(
-                          width: 103,
-                        ),
-                        Text(
-                          "Fight&Win",
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // child: Row(
+                    //   children: [
+                    //     Container(
+                    //       height: 28,
+                    //       width: 22,
+                    //       child: Image.asset("assets/Shape.png"),
+                    //     ),
+                    //     SizedBox(
+                    //       width: 103,
+                    //     ),
+                    //     Text(
+                    //       "Fight&Win",
+                    //       style: GoogleFonts.poppins(
+                    //         textStyle: TextStyle(
+                    //           fontSize: 20,
+                    //           fontWeight: FontWeight.w600,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                   SizedBox(
                     height: 20,

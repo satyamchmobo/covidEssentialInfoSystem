@@ -70,7 +70,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   //mealsListData.titleTxt,
-                                  "writer Title here",
+                                  "Fuck You",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
@@ -229,7 +229,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                     Container(
                                       child: IconButton(
                                           icon: Image.asset(
-                                            'assets/dhondh.jpg',
+                                            'assets/twitter_icon.png',
                                           ),
                                           iconSize: 60,
                                           onPressed: () {

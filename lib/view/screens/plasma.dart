@@ -229,7 +229,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                     Container(
                                       child: IconButton(
                                           icon: Image.asset(
-                                            'assets/twitter_icon.png',
+                                            'assets/dhondh.jpg',
                                           ),
                                           iconSize: 60,
                                           onPressed: () {

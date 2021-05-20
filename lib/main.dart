@@ -109,27 +109,30 @@ class _SymptomsPageState extends State<SymptomsPage> {
     //       ),
     // ),
     // 'hintext': Text("Search symptoms")
-  };
+  };  
   List listOfWid = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
+    // ===================> Variable Section <=====================
+    String AccName ="Dnyaneshwar ";
+    String AccEmail = "wakshe2@gmail.com";
     listOfWid.clear();
-    map.forEach((key, value) => listOfWid.add(value));
-    
-
+    map.forEach((key, value) => listOfWid.add(value)); 
     boolVar = false;
+    // ===================> Variable Section <=====================
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.grey,),
         title: Text(
           "Fight&Win",
           style:            
-             GoogleFonts.poppins(color: Colors.black,
+             GoogleFonts.poppins(color: Colors.grey,
             fontSize: 20,
             fontWeight: FontWeight.w600),           
         
           ),
-          backgroundColor: Colors.lightBlue.shade400,
+          backgroundColor: Colors.white,
           
          
       ),
@@ -140,19 +143,24 @@ class _SymptomsPageState extends State<SymptomsPage> {
           padding: EdgeInsets.zero, 
           children: [
               UserAccountsDrawerHeader(
-                accountName: Text('Dnyaneshwar Wakshe'), 
-                accountEmail: Text('wakshe2@gmail.com'),
+                accountName: Text(AccName), 
+                accountEmail: Text(AccEmail),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.orange,
                   child: Text('D',
                   style: TextStyle(fontSize: 40),),
 
                 ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                 gradient: LinearGradient( colors: [Color(0xFF33FFCC),Color(0xFF33CCFF),Color(0xFF6666FF) ]),
+                ),
                 
               ),
               //============================> Inner List Start<=================================
               ListTile(
                 leading: Icon(Icons.home,),title: Text('Home'),
+                
                 onTap: (){
                   Navigator.pop(context);
                 },

@@ -2,6 +2,7 @@ import 'package:covidessen/model/quickCardsmodel.dart';
 import 'package:covidessen/view/screens/helpline.dart';
 import 'package:covidessen/view/screens/icmrlabs.dart';
 import 'package:covidessen/view/screens/plasma.dart';
+import 'package:covidessen/view/screens/twittercard.dart';
 // import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/whatsapp.dart';
@@ -109,78 +110,78 @@ class _SymptomsPageState extends State<SymptomsPage> {
     //       ),
     // ),
     // 'hintext': Text("Search symptoms")
-  };  
+  };
   List listOfWid = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
     // ===================> Variable Section <=====================
-    String AccName ="Dnyaneshwar ";
+    String AccName = "Dnyaneshwar ";
     String AccEmail = "wakshe2@gmail.com";
     listOfWid.clear();
-    map.forEach((key, value) => listOfWid.add(value)); 
+    map.forEach((key, value) => listOfWid.add(value));
     boolVar = false;
     // ===================> Variable Section <=====================
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.grey,),
+        iconTheme: IconThemeData(
+          color: Colors.grey,
+        ),
         title: Text(
           "Fight&Win",
-          style:            
-             GoogleFonts.poppins(color: Colors.grey,
-            fontSize: 20,
-            fontWeight: FontWeight.w600),           
-        
-          ),
-          backgroundColor: Colors.white,
-          
-         
+          style: GoogleFonts.poppins(
+              color: Colors.grey, fontSize: 20, fontWeight: FontWeight.w600),
+        ),
+        backgroundColor: Colors.white,
       ),
       //============================> Drawee Start<=================================
       drawer: Drawer(
-
         child: ListView(
-          padding: EdgeInsets.zero, 
+          padding: EdgeInsets.zero,
           children: [
-              UserAccountsDrawerHeader(
-                accountName: Text(AccName), 
-                accountEmail: Text(AccEmail),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.orange,
-                  child: Text('D',
-                  style: TextStyle(fontSize: 40),),
-
+            UserAccountsDrawerHeader(
+              accountName: Text(AccName),
+              accountEmail: Text(AccEmail),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  'D',
+                  style: TextStyle(fontSize: 40),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                 gradient: LinearGradient( colors: [Color(0xFF33FFCC),Color(0xFF33CCFF),Color(0xFF6666FF) ]),
-                ),
-                
               ),
-              //============================> Inner List Start<=================================
-              ListTile(
-                leading: Icon(Icons.home,),title: Text('Home'),
-                
-                onTap: (){
-                  Navigator.pop(context);
-                },
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                gradient: LinearGradient(colors: [
+                  Color(0xFF33FFCC),
+                  Color(0xFF33CCFF),
+                  Color(0xFF6666FF)
+                ]),
               ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Setting'),
-                onTap: (){
-                  Navigator.pop(context);
-                },
+            ),
+            //============================> Inner List Start<=================================
+            ListTile(
+              leading: Icon(
+                Icons.home,
               ),
-              ListTile(
-                leading: Icon(Icons.contacts),
-                title: Text('About Us'),
-                onTap: (){
-                  Navigator.pop(context);
-                },
-              ),            
-
-            
+              title: Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Setting'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.contacts),
+              title: Text('About Us'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
@@ -453,8 +454,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            PlasmaPlatformsScreen()),
+                                        builder: (context) => Twittercard()),
                                   );
                                 }
                               },
@@ -512,314 +512,72 @@ class _SymptomsPageState extends State<SymptomsPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  //backgroundBlendMode: ,
-                                  color: Colors.white,
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: 76,
-                              height: 104,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    height: 34,
-                                    width: 33,
-                                    child: Image.asset(
-                                        "assets/headache (1) 2.png"),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlasmaPlatformsScreen()),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                //backgroundBlendMode: ,
+                                color: Colors.white,
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            width: 90,
+                            height: 114,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  height: 34,
+                                  width: 33,
+                                  child: Image.asset("assets/dhondh.jpg"),
+                                ),
+                                Text(
+                                  "Plasma Help ",
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                        color: Color(0xFF3E5061),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 11),
                                   ),
-                                  Text(
-                                    "Fatigue ",
-                                    style: GoogleFonts.poppins(
-                                      textStyle: TextStyle(
-                                          color: Color(0xFF3E5061),
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                )
+                              ],
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  //backgroundBlendMode: ,
-                                  color: Colors.transparent,
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: 76,
-                              height: 104,
-                              child: Checkbox(
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.padded,
-
-                                value: _isChecked1,
-                                tristate: boolVar,
-                                checkColor: Colors.green,
-                                fillColor:
-                                    MaterialStateProperty.resolveWith(getColor),
-
-                                activeColor: Colors.green,
-                                focusColor: Colors.pink,
-                                // fillColor: ,
-                                // focusNode: ,
-                                // overlayColor: ,
-                                // materialTapTargetSize: ,
-                                // visualDensity: ,
-
-                                onChanged: (bool isChecked) {
-                                  if (_formKey.currentState.validate() !=
-                                      false) {
-                                    setState(() {
-                                      _isChecked1 = isChecked;
-                                      if (_isChecked1 == true ||
-                                          _isChecked2 == true) {
-                                        checkStatus = true;
-                                      }
-                                      if (_isChecked1 == true) {
-                                        // checkStatus = true;
-                                        map.remove('icon');
-                                        map.remove('hintext');
-                                        tmpArray.add('Fatigue');
-                                        map['Fatigue'] = Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 9.0),
-                                          child: Container(
-                                            height: 30,
-                                            child: Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                  height: 30,
-                                                  width: 30,
-                                                  child: Image.asset(
-                                                      'assets/headache (1) 2.png'),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0, top: 4),
-                                                  child: Text(
-                                                    'Fatigue',
-                                                    style: GoogleFonts.poppins(
-                                                      textStyle: TextStyle(
-                                                          color:
-                                                              Color(0xFF3E5061),
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          fontSize: 13),
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                        print(listOfWid);
-                                      }
-                                      if (_isChecked1 == false &&
-                                          _isChecked2 == false) {
-                                        checkStatus = false;
-                                      }
-
-                                      if (_isChecked1 == false) {
-                                        tmpArray.remove('Fatigue');
-                                        map.remove('Fatigue');
-                                        // checkStatus = false;
-
-                                        // if (map.isEmpty) {
-                                        //   checkStatus = false;
-
-                                        //   map['icon'] = Padding(
-                                        //     padding:
-                                        //         const EdgeInsets.only(right: 16.0),
-                                        //     child: SizedBox(
-                                        //         width: 20,
-                                        //         height: 20,
-                                        //         child:
-                                        //             Image.asset("assets/Fill (1).png")
-                                        //         // .alignCenter
-                                        //         // .ripple(() {}, borderRadius: BorderRadius.circular(13)
-                                        //         // )
-                                        //         ),
-                                        //   );
-
-                                        //   map['hintext'] = Text("Search symptoms");
-                                        // }
-                                        print(listOfWid);
-                                      }
-
-                                      print(tmpArray);
-                                    });
-                                  }
-                                },
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                        Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  //backgroundBlendMode: ,
-                                  color: Colors.white,
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: 76,
-                              height: 104,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    height: 34,
-                                    width: 33,
-                                    child: Image.asset(
-                                        "assets/icons8-coughing-48 1.png"),
-                                  ),
-                                  Text("Vomiting ",
-                                      style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
-                                            color: Color(0xFF3E5061),
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12),
-                                      ))
-                                ],
+                        Container(
+                          decoration: BoxDecoration(
+                              //backgroundBlendMode: ,
+                              color: Colors.white,
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          width: 90,
+                          height: 114,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height: 34,
+                                width: 33,
+                                child: Image.asset('assets/twitter_icon.png'),
                               ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  //backgroundBlendMode: ,
-                                  color: Colors.transparent,
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: 76,
-                              height: 104,
-                              child: Checkbox(
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.padded,
-
-                                value: _isChecked2,
-                                tristate: boolVar,
-                                checkColor: Colors.green,
-                                fillColor:
-                                    MaterialStateProperty.resolveWith(getColor),
-
-                                activeColor: Colors.green,
-                                focusColor: Colors.pink,
-                                // fillColor: ,
-                                // focusNode: ,
-                                // overlayColor: ,
-                                // materialTapTargetSize: ,
-                                // visualDensity: ,
-
-                                onChanged: (bool isChecked) {
-                                  if (_formKey.currentState.validate() !=
-                                      false) {
-                                    setState(() {
-                                      _isChecked2 = isChecked;
-
-                                      if (_isChecked1 == true ||
-                                          _isChecked2 == true) {
-                                        checkStatus = true;
-                                      }
-
-                                      if (_isChecked2 == true) {
-                                        map.remove('icon');
-                                        map.remove('hintext');
-
-                                        tmpArray.add('Vomiting');
-                                        map['Vomiting'] = Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 9.0),
-                                          child: Container(
-                                            height: 30,
-                                            child: Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                  height: 30,
-                                                  width: 30,
-                                                  child: Image.asset(
-                                                      'assets/icons8-coughing-48 1.png'),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0, top: 4),
-                                                  child: Text(
-                                                    'Vomiting',
-                                                    style: GoogleFonts.poppins(
-                                                      textStyle: TextStyle(
-                                                          color:
-                                                              Color(0xFF3E5061),
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          fontSize: 13),
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                        print(listOfWid);
-
-                                        //listOfWid.add(map['Vomiting']);
-                                      }
-
-                                      if (_isChecked1 == false &&
-                                          _isChecked2 == false) {
-                                        checkStatus = false;
-                                      }
-                                      if (_isChecked2 == false) {
-                                        tmpArray.remove('Vomiting');
-                                        map.remove('Vomiting');
-                                        print(listOfWid);
-                                        // checkStatus = false;
-
-                                        // if (map.isEmpty) {
-                                        //   checkStatus = false;
-                                        //   map['icon'] = Padding(
-                                        //     padding:
-                                        //         const EdgeInsets.only(right: 16.0),
-                                        //     child: SizedBox(
-                                        //         width: 20,
-                                        //         height: 20,
-                                        //         child:
-                                        //             Image.asset("assets/Fill (1).png")
-                                        //         // .alignCenter
-                                        //         // .ripple(() {}, borderRadius: BorderRadius.circular(13)
-                                        //         // )
-                                        //         ),
-                                        //   );
-
-                                        //   map['hintext'] = Text("Search symptoms");
-                                        // }
-
-                                        //listOfWid.add(map['Vomiting']);
-                                      }
-
-                                      print(tmpArray);
-                                    });
-                                  }
-                                },
-                              ),
-                            ),
-                          ],
+                              Text(" Twitter Help ",
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                        color: Color(0xFF3E5061),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 11),
+                                  ))
+                            ],
+                          ),
                         ),
                       ],
                     ),

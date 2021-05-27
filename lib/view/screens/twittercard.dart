@@ -20,7 +20,7 @@ class _TwittercardState extends State<Twittercard> {
                          children: [
                     Container(                                              
                           child: IconButton(
-                            icon: Image.asset('images/twitter_icon.png',),            
+                            icon: Image.asset('assets/twitter_icon.png',),            
                             iconSize: 60,                                                   
                               onPressed: (){   
                                 // Navigator.of(context)

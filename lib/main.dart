@@ -490,15 +490,16 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       ),
                     ),
                   ),
-//
+
+// vaccine notification  card             padding tapable lauch to new screen alignment
                   InkWell(
                     child: Card(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const ListTile(
-                            leading: Icon(Icons.album),
-                            title: Text('The Enchanted Nightingale'),
+                            leading: Icon(Icons.notification_add),
+                            title: Text('Vaccine Slot Notification'),
                             subtitle: Text(
                                 'Music by Julie Gable. Lyrics by Sidney Stein.'),
                           ),
@@ -506,15 +507,15 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
                               TextButton(
-                                child: const Text('BUY TICKETS'),
+                                child: const Text('DETAILS'),
                                 onPressed: () {/* ... */},
                               ),
                               const SizedBox(width: 8),
                               TextButton(
-                                child: const Text('LISTEN'),
+                                child: const Text('START/STOP'),
                                 onPressed: () {/* ... */},
                               ),
-                              const SizedBox(width: 8),
+                              const SizedBox(width: 2),
                             ],
                           ),
                         ],

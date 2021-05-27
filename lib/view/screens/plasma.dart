@@ -6,12 +6,36 @@ import 'package:url_launcher/url_launcher.dart';
 
 class PlasmaPlatformsScreen extends StatelessWidget {
   final List<Map> myProducts = [
-    {"id": 'dhondh.com', "url": "https://dhoondh.com/"},
-    {"id": 'NeedPlasma.com', "url": "https://needplasma.in/"},
-    {"id": 'Plasmadonor', "url": "https://plasmadonor.in/"},
-    {"id": 'plasma.com', "url": "https://www.plasma.com/"},
-    {"id": 'plasmaline', "url": "https://plasmaline.in/"},
-    {"id": 'coronacluster', "url": "https://coronaclusters.in/plasma/donate"},
+    {
+      "id": 'dhondh.com',
+      "url": "https://dhoondh.com/",
+      "imagePath": "assets/dhondh.jpg"
+    },
+    {
+      "id": 'NeedPlasma',
+      "url": "https://needplasma.in/",
+      "imagePath": "assets/need_plasma.png"
+    },
+    {
+      "id": 'Plasmadonor',
+      "url": "https://plasmadonor.in/",
+      "imagePath": "assets/plasmadonor.png"
+    },
+    {
+      "id": 'plasma.com',
+      "url": "https://www.plasma.com/",
+      "imagePath": "assets/plasma.png"
+    },
+    {
+      "id": 'plasmaline',
+      "url": "https://plasmaline.in/",
+      "imagePath": "assets/plasmaline.jpg"
+    },
+    {
+      "id": 'coronacluster',
+      "url": "https://coronaclusters.in/plasma/donate",
+      "imagePath": "assets/coronacluster.png"
+    },
     // {"id": 'zoom.com', "url": "https://zoom.us/"},
     // {"id": 'plasma.com', "url": "https://www.plasma.com/"},
   ];
@@ -208,7 +232,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
 
                             //size of cards
-                            maxCrossAxisExtent: 200,
+                            maxCrossAxisExtent: 160,
                             childAspectRatio: 2 / 2,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 30),
@@ -229,7 +253,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                     Container(
                                       child: IconButton(
                                           icon: Image.asset(
-                                            'assets/twitter_icon.png',
+                                            myProducts[index]["imagePath"],
                                           ),
                                           iconSize: 60,
                                           onPressed: () {
@@ -240,7 +264,8 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                     Padding(
                                       padding:
                                           const EdgeInsets.only(bottom: 8.0),
-                                      child: Text(myProducts[index]["id"]),
+                                      child: Flexible(
+                                          child: Text(myProducts[index]["id"])),
                                     ),
                                   ],
                                 ),

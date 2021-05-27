@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'webviewer.dart';
 
-class twittercard extends StatefulWidget {
+class Twittercard extends StatefulWidget {
   @override
-  _twittercardState createState() => _twittercardState();
+  _TwittercardState createState() => _TwittercardState();
 }
 
-class _twittercardState extends State<twittercard> {
+class _TwittercardState extends State<Twittercard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(      

@@ -16,6 +16,7 @@ import 'package:covidessen/theme/extention.dart';
 import 'package:covidessen/theme/theme.dart';
 import 'package:covidessen/theme/light_color.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:covidessen/model/custom_switch.dart';
 // import 'package:zealth_symptomapp/view/severty.dart';
 
 void main() async {
@@ -118,6 +119,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
     // ===================> Variable Section <=====================
     String AccName = "Dnyaneshwar ";
     String AccEmail = "wakshe2@gmail.com";
+
     listOfWid.clear();
     map.forEach((key, value) => listOfWid.add(value));
     boolVar = false;
@@ -133,6 +135,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
               color: Colors.grey, fontSize: 20, fontWeight: FontWeight.w600),
         ),
         backgroundColor: Colors.white,
+        actions: [switch_widget()],
       ),
       //============================> Drawee Start<=================================
       drawer: Drawer(
@@ -509,7 +512,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                           children: <Widget>[
                             const ListTile(
                               minVerticalPadding: 10.0,
-                              leading: Icon(Icons.notification_add),
+                              leading: Icon(Icons.notifications),
                               title: Text('Vaccine Slot Notification'),
                               subtitle: Text(
                                   "Don't miss the  Vaccant slot!! Vaccination saves lives at every stage of life."),

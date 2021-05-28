@@ -94,7 +94,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   //mealsListData.titleTxt,
-                                  "Fuck You",
+                                  "Give And Take",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
@@ -257,8 +257,8 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                           ),
                                           iconSize: 60,
                                           onPressed: () {
-                                            // Navigator.of(context)
-                                            // .push(MaterialPageRoute(builder:(_)=>Web(url: myProducts[index]["url"],)));
+                                            Navigator.of(context)
+                                            .push(MaterialPageRoute(builder:(_)=>Web(url: myProducts[index]["url"])));
                                           }),
                                     ),
                                     Padding(

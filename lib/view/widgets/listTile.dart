@@ -156,22 +156,26 @@ class _ListItemCustomState extends State<ListItemCustom> {
                 style: TextStyles.title.copyWith(
                     fontWeight: FontWeight.bold,
                     color: LightColor.titleTextColor)),
-            subtitle: Row(
-              children: [
-                Text(
-                  "${prodQuant}",
-                  style: TextStyles.bodySm.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: LightColor.subTitleTextColor),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                // Text(
-                //   "Price : ${prodPrice}",
-                //   style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
-                // ),
-              ],
+            subtitle: Expanded(
+              child: Row(
+                children: [
+                  Text(
+                    prodQuant.length > 14
+                        ? prodQuant.toString().substring(0, 14)
+                        : prodQuant,
+                    style: TextStyles.bodySm.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: LightColor.subTitleTextColor),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  // Text(
+                  //   "Price : ${prodPrice}",
+                  //   style: TextStyles.bodySm.copyWith(fontWeight: FontWeight.bold,color: LightColor.subTitleTextColor),
+                  // ),
+                ],
+              ),
             ),
             trailing: InkWell(
               onTap: funToCalNum == 0
@@ -186,7 +190,14 @@ class _ListItemCustomState extends State<ListItemCustom> {
               child: Container(
                 height: imageSize,
                 width: imageSize,
-                child: Image.asset(imagePath),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        height: 30, width: 30, child: Image.asset(imagePath)),
+                    Text("Tap Here", style: TextStyle(fontSize: 8))
+                  ],
+                ),
               ),
             ),
           ),

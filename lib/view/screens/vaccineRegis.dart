@@ -503,8 +503,8 @@ class Single_prod extends StatelessWidget {
                             },
                             child: Flexible(
                               child: Container(
-                                height: 26.0,
-                                width: 26.0,
+                                height: 22.0,
+                                width: 22.0,
                                 decoration: BoxDecoration(
                                   color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(12.0),
@@ -529,7 +529,7 @@ class Single_prod extends StatelessWidget {
                               child: Text(
                             "watch video",
                             style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold),
+                                fontSize: 7, fontWeight: FontWeight.bold),
                           )),
                         ],
                       ),

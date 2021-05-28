@@ -82,7 +82,7 @@ class _switch_widgetState extends State<switch_widget> {
       child: Row(
         children: [
           Text(
-            '$is_switched',
+            '$textValue',
             style: TextStyle(
               color: Colors.red,
               fontSize: 15.0,
@@ -93,6 +93,10 @@ class _switch_widgetState extends State<switch_widget> {
             onChanged: (value) {
               setState(() {
                 is_switched = value;
+                if (is_switched == true) {
+                  textValue = 'Hindi';
+                } else
+                  textValue = 'English';
               });
             },
           ),

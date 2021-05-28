@@ -377,8 +377,8 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                             color: Color(0xffA5B2BE),
-                            blurRadius: 15,
-                            offset: Offset(5, 5),
+                            blurRadius: 12,
+                            offset: Offset(2, 2),
                           )
                         ],
                       ),
@@ -490,12 +490,19 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
 
 // vaccine notification  card             padding tapable lauch to new screen alignment
                   InkWell(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 8, bottom: 8),
                       child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,

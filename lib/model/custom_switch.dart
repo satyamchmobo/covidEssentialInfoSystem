@@ -94,7 +94,7 @@ class _switch_widgetState extends State<switch_widget> {
               setState(() {
                 is_switched = value;
                 if (is_switched == true) {
-                  textValue = 'Hindi';
+                  textValue = 'हिन्दी';
                 } else
                   textValue = 'English';
               });

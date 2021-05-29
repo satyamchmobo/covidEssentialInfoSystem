@@ -1,7 +1,9 @@
 import 'package:covidessen/model/quickCardsmodel.dart';
+import 'package:covidessen/view/screens/about.dart';
 import 'package:covidessen/view/screens/helpline.dart';
 import 'package:covidessen/view/screens/icmrlabs.dart';
 import 'package:covidessen/view/screens/plasma.dart';
+import 'package:covidessen/view/screens/setting.dart';
 import 'package:covidessen/view/screens/twitter_screen.dart';
 import 'package:covidessen/view/screens/twittercard.dart';
 // import 'package:covidessen/view/screens/plasma.dart';
@@ -144,8 +146,8 @@ class _SymptomsPageState extends State<SymptomsPage> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(AccName),
-              accountEmail: Text(AccEmail),
+              accountName: Text(AccName,style: TextStyle( color: Colors.black ),),
+              accountEmail: Text(AccEmail,style: TextStyle( color: Colors.black ),),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.orange,
                 child: Text(
@@ -176,14 +178,25 @@ class _SymptomsPageState extends State<SymptomsPage> {
               leading: Icon(Icons.settings),
               title: Text('Setting'),
               onTap: () {
-                Navigator.pop(context);
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),); 
               },
             ),
             ListTile(
               leading: Icon(Icons.contacts),
               title: Text('About Us'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => About()),);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Log Out"),
+              onTap: (){
+
               },
             ),
           ],

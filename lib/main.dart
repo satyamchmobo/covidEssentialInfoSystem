@@ -19,14 +19,20 @@ import 'package:covidessen/theme/extention.dart';
 import 'package:covidessen/theme/theme.dart';
 import 'package:covidessen/theme/light_color.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:covidessen/model/custom_switch.dart';
-// import 'package:zealth_symptomapp/view/severty.dart';
 
+// import 'package:covidessen/model/custom_switch.dart';
+// import 'package:zealth_symptomapp/view/severty.dart';
+String plasmaCardString = "Plasma Help";
+String twitterCardString = "Twitter Help";
+
+var textValue = 'English';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
+
+bool is_switched = false;
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -138,7 +144,43 @@ class _SymptomsPageState extends State<SymptomsPage> {
               color: Colors.grey, fontSize: 20, fontWeight: FontWeight.w600),
         ),
         backgroundColor: Colors.white,
-        actions: [switch_widget()],
+        actions: [
+          Container(
+            margin: EdgeInsets.only(right: 30),
+            child: Row(
+              children: [
+                Text(
+                  '$textValue',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 15.0,
+                  ),
+                ),
+                Switch(
+                  value: is_switched,
+                  onChanged: (value) {
+                    if (value == true) {
+                      setState(() {
+                        is_switched = true;
+                        textValue = 'हिन्दी';
+                        plasmaCardString = "प्लाज्मा सहायता";
+                        twitterCardString = "ट्विटर सहायता";
+                      });
+                    } else {
+                      setState(() {
+                        is_switched = false;
+                        textValue = 'English';
+                        plasmaCardString = "Plasma Help";
+                        twitterCardString = "Twitter Help";
+
+                      });
+                    }
+                  },
+                ),
+              ],
+            ),
+          )
+        ],
       ),
       //============================> Drawee Start<=================================
       drawer: Drawer(
@@ -607,7 +649,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                   child: Image.asset("assets/dhondh.jpg"),
                                 ),
                                 Text(
-                                  "Plasma Help ",
+                                  plasmaCardString,
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(
                                         color: Color(0xFF3E5061),
@@ -645,7 +687,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                   width: 33,
                                   child: Image.asset('assets/twitter_icon.png'),
                                 ),
-                                Text(" Twitter Help ",
+                                Text(twitterCardString,
                                     style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
                                           color: Color(0xFF3E5061),
@@ -960,5 +1002,49 @@ class HexColor extends Color {
       hexColor = 'FF' + hexColor;
     }
     return int.parse(hexColor, radix: 16);
+  }
+}
+
+class switch_widget extends StatefulWidget {
+  @override
+  _switch_widgetState createState() => _switch_widgetState();
+}
+
+class _switch_widgetState extends State<switch_widget> {
+  var textValue = 'English';
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 30),
+      child: Row(
+        children: [
+          Text(
+            '$textValue',
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 15.0,
+            ),
+          ),
+          Switch(
+            value: is_switched,
+            onChanged: (value) {
+              if (value == true) {
+                setState(() {
+                  is_switched = true;
+                  textValue = 'हिन्दी';
+                  plasmaCardString = "Plasma Help";
+                });
+              } else {
+                setState(() {
+                  is_switched = false;
+                  textValue = 'English';
+                  plasmaCardString = "प्लाज्मा सहायता";
+                });
+              }
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

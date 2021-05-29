@@ -26,6 +26,10 @@ String plasmaCardString = "Plasma Help";
 String twitterCardString = "Twitter Help";
 
 var textValue = 'English';
+
+// import 'package:zealth_symptomapp/view/severty.dart';
+bool notify_switch = false;
+String notify_text = 'Start';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -36,6 +40,7 @@ bool is_switched = false;
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  Color notif_color = Colors.grey;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -85,6 +90,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
   int _currentNav = 0;
   bool _isChecked1 = false;
   bool _isChecked2 = false;
+
   fun() {}
 
   Map<String, bool> values = {
@@ -172,7 +178,6 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         textValue = 'English';
                         plasmaCardString = "Plasma Help";
                         twitterCardString = "Twitter Help";
-
                       });
                     }
                   },
@@ -572,9 +577,16 @@ class _SymptomsPageState extends State<SymptomsPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            const ListTile(
+                            ListTile(
                               minVerticalPadding: 10.0,
-                              leading: Icon(Icons.notifications),
+                              leading: Icon(
+                                notify_switch
+                                    ? Icons.notifications
+                                    : Icons.notifications_off,
+                                color: !notify_switch
+                                    ? Colors.red
+                                    : Colors.greenAccent,
+                              ),
                               title: Text('Vaccine Slot Notification'),
                               subtitle: Text(
                                   "Don't miss the  Vaccant slot!! Vaccination saves lives at every stage of life."),
@@ -582,14 +594,28 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
-                                TextButton(
-                                  child: const Text('DETAILS'),
-                                  onPressed: () {/* ... */},
+                                Container(
+                                  margin: EdgeInsets.only(right: 60),
+                                  child: TextButton(
+                                    child: const Text('DETAILS'),
+                                    onPressed: () {/* ... */},
+                                  ),
                                 ),
                                 const SizedBox(width: 8),
-                                TextButton(
-                                  child: const Text('START/STOP'),
-                                  onPressed: () {/* ... */},
+                                Container(
+                                  margin: EdgeInsets.only(right: 20),
+                                  child: Switch(
+                                    value: notify_switch,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        notify_switch = value;
+                                        // if (notify_switch == false)
+                                        //   notify_text = 'Start';
+                                        // else
+                                        //   notify_text = 'Stop';
+                                      });
+                                    },
+                                  ),
                                 ),
                                 const SizedBox(width: 2),
                               ],

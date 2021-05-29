@@ -94,12 +94,12 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   //mealsListData.titleTxt,
-                                  "Give And Take",
+                                  "Donate Plasma!",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20,
+                                    fontSize: 22,
                                     letterSpacing: 0.2,
                                     color: FitnessAppTheme.white,
                                   ),
@@ -116,13 +116,13 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                       children: <Widget>[
                                         Text(
                                           //mealsListData.meals.join('\n')
-                                          "writer sub Title here",
+                                          "Bring a life back to power...",
                                           style: TextStyle(
                                             fontFamily:
                                                 FitnessAppTheme.fontName,
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
-                                            letterSpacing: 0.2,
+                                            letterSpacing: 0.4,
                                             color: FitnessAppTheme.white,
                                           ),
                                         ),
@@ -130,7 +130,6 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                            
                               ],
                             ),
                           ),
@@ -205,8 +204,11 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                           ),
                                           iconSize: 60,
                                           onPressed: () {
-                                            Navigator.of(context)
-                                            .push(MaterialPageRoute(builder:(_)=>Web(url: myProducts[index]["url"])));
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (_) => Web(
+                                                        url: myProducts[index]
+                                                            ["url"])));
                                           }),
                                     ),
                                     Padding(

@@ -146,8 +146,14 @@ class _SymptomsPageState extends State<SymptomsPage> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(AccName,style: TextStyle( color: Colors.black ),),
-              accountEmail: Text(AccEmail,style: TextStyle( color: Colors.black ),),
+              accountName: Text(
+                AccName,
+                style: TextStyle(color: Colors.black),
+              ),
+              accountEmail: Text(
+                AccEmail,
+                style: TextStyle(color: Colors.black),
+              ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.orange,
                 child: Text(
@@ -178,9 +184,10 @@ class _SymptomsPageState extends State<SymptomsPage> {
               leading: Icon(Icons.settings),
               title: Text('Setting'),
               onTap: () {
-               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Settings()),); 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Settings()),
+                );
               },
             ),
             ListTile(
@@ -188,16 +195,15 @@ class _SymptomsPageState extends State<SymptomsPage> {
               title: Text('About Us'),
               onTap: () {
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => About()),);
+                  context,
+                  MaterialPageRoute(builder: (context) => About()),
+                );
               },
             ),
             ListTile(
               leading: Icon(Icons.logout),
               title: Text("Log Out"),
-              onTap: (){
-
-              },
+              onTap: () {},
             ),
           ],
         ),
@@ -614,20 +620,19 @@ class _SymptomsPageState extends State<SymptomsPage> {
                           ),
                         ),
                         InkWell(
-                     
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      TwitterScreen()),
+                                  builder: (context) => TwitterScreen()),
                             );
                           },
                           child: Container(
                             decoration: BoxDecoration(
                                 //backgroundBlendMode: ,
                                 color: Colors.white,
-                                border: Border.all(color: Colors.white, width: 2),
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
                             width: 90,

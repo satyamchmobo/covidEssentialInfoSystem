@@ -1,6 +1,7 @@
 import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/main.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:india_beats_covid/core/mock/mock_data.dart';
 // import 'package:india_beats_covid/utils/constants.dart';
@@ -155,11 +156,22 @@ class TwitterScreen extends StatelessWidget {
                   height: 20,
                 ),
 
+                GFListTile(
+                    color: Colors.grey[200],
+                    titleText: 'Note',
+                    subtitleText:
+                        'Type your city or state name with correct spelling. Try to type name with first character as capital.                                                                                                                                                              For Example : City - Pune or State - Maharashtra.                                                                        Search results depends on keywords.',
+                    icon: Icon(
+                      Icons.lightbulb_outline,
+                      color: Colors.green,
+                    )),
+
                 SizedBox(
-                  height: 80,
+                  height: 30,
                 ),
 
                 //===
+                Text("Type here"),
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 16, bottom: 16, left: 16, right: 16),
@@ -188,6 +200,14 @@ class TwitterScreen extends StatelessWidget {
                     )),
                   ),
                 ),
+                GFListTile(
+                    color: Colors.green[100],
+                    subtitleText:
+                        'It will take you to twitter app or website with all relevant results.',
+                    icon: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.green,
+                    )),
               ],
             ),
           ),

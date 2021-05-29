@@ -35,6 +35,7 @@ dependencies:
   firebase_auth:
   firebase_core:
   webview_flutter: 0.3.20+2
+  getwidget: ^1.1.0
   
   
 

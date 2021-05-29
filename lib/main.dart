@@ -608,6 +608,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                     value: notify_switch,
                                     onChanged: (value) {
                                       setState(() {
+                                        //comment added
                                         notify_switch = value;
                                         // if (notify_switch == false)
                                         //   notify_text = 'Start';

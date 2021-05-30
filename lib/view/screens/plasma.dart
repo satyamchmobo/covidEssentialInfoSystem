@@ -180,7 +180,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
 
                             //size of cards
                             maxCrossAxisExtent: 160,
-                            childAspectRatio: 2 / 2,
+                            childAspectRatio: 2 / 2.5,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 30),
                         itemCount: myProducts.length,
@@ -208,7 +208,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                                                 MaterialPageRoute(
                                                     builder: (_) => Web(
                                                         url: myProducts[index]
-                                                            ["url"])));
+                                                            ["url"],websiteName: myProducts[index]["id"],)));
                                           }),
                                     ),
                                     Padding(

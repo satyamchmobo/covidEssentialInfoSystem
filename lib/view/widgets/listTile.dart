@@ -104,6 +104,9 @@ class _ListItemCustomState extends State<ListItemCustom> {
       throw 'Could not launch ${url()}';
     }
   }
+  void launchURL(){
+    
+  }
 
 // final String phone = 'tel:+1 234 517 8991';
 

@@ -18,6 +18,7 @@ class StateWebPage extends StatefulWidget {
 }
 
 class _StateWebPageState extends State<StateWebPage> {
+  final url="";
   // MealsListData mealsListData;
 
   // _StateWebPageState({this.mealsListData});
@@ -31,6 +32,11 @@ class _StateWebPageState extends State<StateWebPage> {
         return "whatsapp://wa.me/$phone/?text=${Uri.parse(message)}";
       } else {
         return "whatsapp://send?phone=$phone.&text=${Uri.parse(message)}";
+      }
+      if (Platform.isIOS) {
+        return message;
+      } else {
+        return phone;
       }
     }
 
@@ -69,7 +75,7 @@ class _StateWebPageState extends State<StateWebPage> {
                         .snapshots(),
                     builder: (context, snapshot) {
                       return !snapshot.hasData
-                          ? Text('PLease Wait')
+                          ? Text('Please Wait')
                           : ListView.builder(
                               itemCount: snapshot.data.docs.length,
                               itemBuilder: (context, index) {
@@ -77,11 +83,12 @@ class _StateWebPageState extends State<StateWebPage> {
                                 print("=====>");
                                 DocumentSnapshot statewebdocsnap =
                                     snapshot.data.docs[index];
+                                    
                                 return ListItemCustom(
                                   prodName: statewebdocsnap['stateName'],
                                   prodQuant: statewebdocsnap['websiteURL'],
                                   imageSize: 60,
-                                  imagePath: "assets/whatsapp (1).png",
+                                  imagePath: "assets/launch-.jpg",
                                   // prodQuant: " 8108982186",
                                   //  pr
 

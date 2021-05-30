@@ -18,7 +18,20 @@ class StateWebPage extends StatefulWidget {
 }
 
 class _StateWebPageState extends State<StateWebPage> {
-  final url="";
+  bool isSearching;
+
+  TextEditingController stateLiSearchController = TextEditingController();
+
+  final url = "";
+
+  @override
+  void initState() {
+    stateLiSearchController.addListener(() {
+      // filterContacts();
+      setState(() {});
+    });
+    super.initState();
+  }
   // MealsListData mealsListData;
 
   // _StateWebPageState({this.mealsListData});
@@ -56,6 +69,7 @@ class _StateWebPageState extends State<StateWebPage> {
 
   @override
   Widget build(BuildContext context) {
+    isSearching = stateLiSearchController.text.isNotEmpty;
     return Scaffold(
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -212,6 +226,47 @@ class _StateWebPageState extends State<StateWebPage> {
                   height: 20,
                 ),
 
+                //     Container(
+                //   child: TextField(
+                //     controller: stateLiSearchController,
+                //     decoration: InputDecoration(
+                //         labelText: 'Search contact',
+                //         prefixIcon: Icon(Icons.search)),
+                //   ),
+                // ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 20),
+                  child: TextFormField(
+                    controller: stateLiSearchController,
+                    decoration: InputDecoration(
+                      hintText: 'Ex: Madhya Pradesh',
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.lightBlueAccent, width: 1.0),
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.lightBlueAccent, width: 2.0),
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                    ),
+                    // validator: (value) {
+                    //   if (value!.isEmpty) {
+                    //     return 'You must enter the Product Name';
+                    //   } else if (value.length > 30) {
+                    //     return 'Product name cant have more than 10 letters';
+                    //   }
+                    // },
+                  ),
+                ),
+
                 Container(
                   height: 800,
                   child: StreamBuilder(
@@ -228,19 +283,34 @@ class _StateWebPageState extends State<StateWebPage> {
                                 print("=====>");
                                 DocumentSnapshot statewebdocsnap =
                                     snapshot.data.docs[index];
-                                    
-                                return ListItemCustom(
-                                  prodName: statewebdocsnap['stateName'],
-                                  prodQuant: statewebdocsnap['websiteURL'],
-                                  imageSize: 60,
-                                  imagePath: "assets/launch-.jpg",
-                                  // prodQuant: " 8108982186",
-                                  //  pr
+                                if (isSearching) {
+                                  // filterContactsif(stateLiSearchController.text.substring(0,1)==statewebdocsnap['stateName'].toString().substring(0,1))
+                                  if (statewebdocsnap['stateName']
+                                      .contains(stateLiSearchController.text)) {
+                                    return ListItemCustom(
+                                      prodName: statewebdocsnap['stateName'],
+                                      prodQuant: statewebdocsnap['websiteURL'],
+                                      imageSize: 60,
+                                      imagePath: "assets/launch-.jpg",
+                                      // prodQuant: " 8108982186",
+                                      //  pr
 
-                                  funToCalNum: 2,
-                                );
-                              },
-                            );
+                                      funToCalNum: 2,
+                                    );
+                                  }
+                                  return null;
+                                } else
+                                  return ListItemCustom(
+                                    prodName: statewebdocsnap['stateName'],
+                                    prodQuant: statewebdocsnap['websiteURL'],
+                                    imageSize: 60,
+                                    imagePath: "assets/launch-.jpg",
+                                    // prodQuant: " 8108982186",
+                                    //  pr
+
+                                    funToCalNum: 2,
+                                  );
+                              });
                     },
                   ),
                 ),

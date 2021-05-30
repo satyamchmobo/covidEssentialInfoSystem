@@ -16,11 +16,26 @@ class HelplinePage extends StatefulWidget {
 }
 
 class _HelplinePageState extends State<HelplinePage> {
+  bool isSearching;
+
+  TextEditingController stateLiSearchController = TextEditingController();
+
   MealsListData mealsListData;
+
+  @override
+  void initState() {
+    stateLiSearchController.addListener(() {
+      // filterContacts();
+      setState(() {});
+    });
+    super.initState();
+  }
 
   _HelplinePageState({this.mealsListData});
   @override
   Widget build(BuildContext context) {
+    isSearching = stateLiSearchController.text.isNotEmpty;
+
     return Scaffold(
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -68,20 +83,22 @@ class _HelplinePageState extends State<HelplinePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               //=============> back button===
-                                Row(children: [
+                              Row(
+                                children: [
                                   GestureDetector(
-                                      child: Icon(
+                                    child: Icon(
                                       Icons.arrow_back,
-                                      color: Colors.white,                                    
-                                      ),
-                                      onTap: (){
-                                        Navigator.pop(context);
-                                      },
-                                    ), 
-                                    ],
+                                      color: Colors.white,
                                     ),
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ],
+                              ),
                               Padding(
-                                padding: const EdgeInsets.only(top:8.0, left: 8),
+                                padding:
+                                    const EdgeInsets.only(top: 8.0, left: 8),
                                 child: Text(
                                   mealsListData.titleTxt,
                                   textAlign: TextAlign.center,
@@ -96,14 +113,13 @@ class _HelplinePageState extends State<HelplinePage> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 14, bottom: 8,left: 8),
+                                  padding: const EdgeInsets.only(
+                                      top: 14, bottom: 8, left: 8),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      
                                       Text(
                                         mealsListData.meals.join('\n'),
                                         style: TextStyle(
@@ -207,6 +223,44 @@ class _HelplinePageState extends State<HelplinePage> {
               SizedBox(
                 height: 20,
               ),
+              Padding(
+                padding: const EdgeInsets.only(left:20),
+                child: Text("Search by State name"),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
+                child: TextFormField(
+                  controller: stateLiSearchController,
+                  decoration: InputDecoration(
+                    hintText: 'Ex: Madhya Pradesh',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ),
+                  ),
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return 'You must enter the Product Name';
+                  //   } else if (value.length > 30) {
+                  //     return 'Product name cant have more than 10 letters';
+                  //   }
+                  // },
+                ),
+              ),
+
               Container(
                 height: 600,
                 child: StreamBuilder(
@@ -223,20 +277,38 @@ class _HelplinePageState extends State<HelplinePage> {
                               print("=====>");
                               DocumentSnapshot whatsappbotdocsnap =
                                   snapshot.data.docs[index];
-                              return ListItemCustom(
-                                prodName: whatsappbotdocsnap['city'],
-                                prodQuant: whatsappbotdocsnap['helpline'],
-                                ind: 12,
-                                imageSize: 40,
-                                imagePath: "assets/call.png",
+                              if (isSearching) {
+                                // filterContactsif(stateLiSearchController.text.substring(0,1)==statewebdocsnap['stateName'].toString().substring(0,1))
+                                if (whatsappbotdocsnap['city']
+                                    .contains(stateLiSearchController.text)) {
+                                  return ListItemCustom(
+                                    prodName: whatsappbotdocsnap['city'],
+                                    prodQuant: whatsappbotdocsnap['helpline'],
+                                    ind: 12,
+                                    imageSize: 40,
+                                    imagePath: "assets/call.png",
 
-                                // prodQuant: " 8108982186",
-                                //  pr
+                                    // prodQuant: " 8108982186",
+                                    //  pr
 
-                                funToCalNum: 1,
-                              );
-                            },
-                          );
+                                    funToCalNum: 1,
+                                  );
+                                }
+                                return null;
+                              } else
+                                return ListItemCustom(
+                                  prodName: whatsappbotdocsnap['city'],
+                                  prodQuant: whatsappbotdocsnap['helpline'],
+                                  ind: 12,
+                                  imageSize: 40,
+                                  imagePath: "assets/call.png",
+
+                                  // prodQuant: " 8108982186",
+                                  //  pr
+
+                                  funToCalNum: 1,
+                                );
+                            });
                   },
                 ),
               ),

@@ -60,12 +60,109 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: SymptomsPage(),
+      home: RootPage(),
     );
   }
 }
 
-bool boolVar = true;
+class RootPage extends StatefulWidget {
+  @override
+  _RootPageState createState() => _RootPageState();
+}
+
+class _RootPageState extends State<RootPage> {
+  int selectedIndex = 0;
+
+  List<Widget> pages = [
+    SymptomsPage(),
+    WhatsAppBotPage(),
+    Disclaimer_page(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: getBody(),
+      bottomNavigationBar: SizedBox(
+        height: 100,
+        child: BottomNavigationBar(
+          onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+            // Navigator.of(context)
+            //     .push(MaterialPageRoute(builder: (_) => Disclaimer_page()));
+          },
+          currentIndex: selectedIndex,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(bottom: 7, top: 10),
+                child: Container(
+                  height: 21,
+                  width: 30,
+                  child: Image.asset("assets/home-web-button-outline.png"),
+                ),
+              ),
+              title: Text(
+                "Home",
+                style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF3E5061)),
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(bottom: 7, top: 10),
+                child: Container(
+                  height: 21,
+                  width: 30,
+                  child: Image.asset(
+                    "assets/group.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              title: Text(
+                "Team",
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFFFF0270)),
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(bottom: 7, top: 10),
+                child: Container(
+                  height: 21,
+                  width: 30,
+                  child: Image.asset(
+                    "assets/information.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              title: Text(
+                "Disclaimer",
+                style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF3E5061)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget getBody() {
+    return pages.elementAt(selectedIndex);
+  }
+}
 
 class SymptomsPage extends StatefulWidget {
   @override
@@ -73,6 +170,7 @@ class SymptomsPage extends StatefulWidget {
 }
 
 class _SymptomsPageState extends State<SymptomsPage> {
+  bool boolVar = true;
   List<MealsListData> mealsListData = MealsListData.tabIconsList;
   bool checkStatus = false;
   List listOfIcon = <Widget>[
@@ -261,99 +359,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
         ),
       ),
       //============================> Drawee Close<=================================
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentNav,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 7, top: 10),
-              child: Container(
-                height: 21,
-                width: 30,
-                child: Image.asset("assets/home-web-button-outline.png"),
-              ),
-            ),
-            title: Text(
-              "Home",
-              style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF3E5061)),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 7, top: 10),
-              child: Container(
-                height: 21,
-                width: 30,
-                child: Image.asset(
-                  "assets/group.png",
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            title: Text(
-              "Team",
-              style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFFFF0270)),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 7, top: 10),
-              child: GestureDetector(
-                child: Container(
-                  height: 21,
-                  width: 30,
-                  child: Image.asset(
-                    "assets/information.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => Disclaimer_page()));
-                },
-              ),
-            ),
-            title: Text(
-              "Disclaimer",
-              style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF3E5061)),
-            ),
-          ),
-          // BottomNavigationBarItem(
-          //   icon: Padding(
-          //     padding: const EdgeInsets.only(bottom: 7, top: 10),
-          //     child: Container(
-          //       height: 21,
-          //       width: 30,
-          //       child: Image.asset("assets/Activity.png"),
-          //     ),
-          //   ),
-          //   title: Text(
-          //     "Reports",
-          //     style: GoogleFonts.poppins(
-          //         fontSize: 12,
-          //         fontWeight: FontWeight.w500,
-          //         color: Color(0xFF3E5061)),
-          //   ),
-          // ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _currentNav = index;
-          });
-          // Navigator.of(context)
-          //     .push(MaterialPageRoute(builder: (_) => Disclaimer_page()));
-        },
-      ),
+
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
@@ -678,7 +684,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                 Container(
                                   height: 34,
                                   width: 33,
-                                  child: Image.asset("assets/dhondh.jpg"),
+                                  child: Image.asset("assets/blood-drop.png"),
                                 ),
                                 Text(
                                   plasmaCardString,
@@ -693,8 +699,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ),
                           ),
                         ),
-
-                          InkWell(
+                        InkWell(
                           onTap: () {
                             Navigator.push(
                               context,
@@ -718,7 +723,8 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                 Container(
                                   height: 34,
                                   width: 33,
-                                  child: Image.asset('assets/indian-map (1).png'),
+                                  child:
+                                      Image.asset('assets/indian-map (1).png'),
                                 ),
                                 Text(stateCardString,
                                     style: GoogleFonts.poppins(
@@ -731,7 +737,6 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ),
                           ),
                         ),
-                        
                         InkWell(
                           onTap: () {
                             Navigator.push(
@@ -769,7 +774,6 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ),
                           ),
                         ),
-                      
                       ],
                     ),
                   ),
@@ -798,23 +802,22 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),
-
-                  // _categoryCard("Milk Products", "50+ products",
-                  //     color: LightColor.skyBlue, lightColor: LightColor.lightBlue),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => HelplinePage(
+                            builder: (context) => WhatsAppBotPage(
                                   mealsListData: mealsListData[2],
                                 )),
                       );
                     },
-                    child: _categoryCard(mealsListData[2],
-                        color: LightColor.orange,
-                        lightColor: LightColor.lightOrange),
-                  )
+                    child: _categoryCard(mealsListData[2], // whatsapp bot card
+                        color: LightColor.green,
+                        lightColor: LightColor.lightGreen),
+                  ),
+                  // _categoryCard("Milk Products", "50+ products",
+                  //     color: LightColor.skyBlue, lightColor: LightColor.lightBlue),
                 ],
               ),
             ),
@@ -831,14 +834,14 @@ class _SymptomsPageState extends State<SymptomsPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => WhatsAppBotPage(
+                            builder: (context) => HelplinePage(
                                   mealsListData: mealsListData[1],
                                 )),
                       );
                     },
-                    child: _categoryCard(mealsListData[1], // whatsapp bot card
-                        color: LightColor.green,
-                        lightColor: LightColor.lightGreen),
+                    child: _categoryCard(mealsListData[1],
+                        color: LightColor.orange,
+                        lightColor: LightColor.lightOrange),
                   ),
 
                   // _categoryCard("Milk Products", "50+ products",

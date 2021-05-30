@@ -128,7 +128,7 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        top: 14, bottom: 8,left: 10),
+                                        top: 14, bottom: 8,),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,

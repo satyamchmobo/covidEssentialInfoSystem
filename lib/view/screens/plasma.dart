@@ -208,11 +208,11 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                         itemBuilder: (BuildContext ctx, index) {
                           return InkWell(
                             onTap: () async {
-                              if (await canLaunch(myProducts[index]["url"])) {
-                                await launch(myProducts[index]["url"]);
-                              } else {
-                                throw 'Could Not Launch ${myProducts[index]["url"]}';
-                              }
+                              // if (await canLaunch(myProducts[index]["url"])) {
+                              //   await launch(myProducts[index]["url"]);
+                              // } else {
+                              //   throw 'Could Not Launch ${myProducts[index]["url"]}';
+                              // }
                             },
                             child: Container(
                               child: Card(

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:covidessen/theme/text_styles.dart';
+import 'package:covidessen/view/screens/webviewer.dart';
 import 'package:flutter/material.dart';
 import 'package:covidessen/theme/light_color.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -86,6 +87,14 @@ class _ListItemCustomState extends State<ListItemCustom> {
     }
   }
 
+  void launchStateWebsite(String phone1) async {
+    if (await canLaunch(phone1)) {
+      await launch(phone1);
+    } else {
+      throw 'Could not Call Phone';
+    }
+  }
+
   void launchWhatsApp({
     @required String phone,
     @required String message,
@@ -162,9 +171,11 @@ class _ListItemCustomState extends State<ListItemCustom> {
             subtitle: Expanded(
               child: Row(
                 children: [
+
+                 
                   Text(
-                    prodQuant.length > 14
-                        ? prodQuant.toString().substring(0, 14)
+                    prodQuant.length ==0
+                        ? 'Will be updated soon' : prodQuant.length >14 ?prodQuant.toString().substring(0, 14)
                         : prodQuant,
                     style: TextStyles.bodySm.copyWith(
                         fontWeight: FontWeight.bold,
@@ -183,13 +194,16 @@ class _ListItemCustomState extends State<ListItemCustom> {
             trailing: InkWell(
               onTap: funToCalNum == 0
                   ? () async {
-                      launchWhatsApp(
-                          message: "COVID", phone: "+1 234 517 8991");
+                      launchWhatsApp(message: "COVID", phone: prodQuant);
                     }
-                  : () {
-                      // canLaunch('tel:+91-9179772425');
-                      _callPhone1('tel:+91-9179772425');
-                    },
+                  : funToCalNum == 1
+                      ? () {
+                          // canLaunch('tel:+91-9179772425');
+                          _callPhone1('tel:' + prodQuant);
+                        }
+                      : () {
+                          launchStateWebsite(prodQuant);
+                        },
               child: Container(
                 height: imageSize,
                 width: imageSize,
@@ -205,5 +219,12 @@ class _ListItemCustomState extends State<ListItemCustom> {
             ),
           ),
         ));
+  }
+
+  navigateToWebView() async {
+    await new Future.delayed(const Duration(seconds: 5));
+
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => Web(url: prodQuant)));
   }
 }

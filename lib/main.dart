@@ -4,6 +4,7 @@ import 'package:covidessen/view/screens/helpline.dart';
 import 'package:covidessen/view/screens/icmrlabs.dart';
 import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/setting.dart';
+import 'package:covidessen/view/screens/stateweb.dart';
 import 'package:covidessen/view/screens/twitter_screen.dart';
 import 'package:covidessen/view/screens/twittercard.dart';
 // import 'package:covidessen/view/screens/plasma.dart';

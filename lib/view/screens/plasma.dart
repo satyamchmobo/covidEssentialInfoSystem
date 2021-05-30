@@ -1,4 +1,5 @@
 import 'package:covidessen/fintness_app_theme.dart';
+import 'package:covidessen/theme/extention.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/webviewer.dart';
 import 'package:flutter/material.dart';
@@ -52,11 +53,14 @@ class PlasmaPlatformsScreen extends StatelessWidget {
           child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
+               // Row(children: [Icon(Icons.arrow_back)],),
                 SizedBox(
                   width: double.infinity,
                   height: 200,
                   child: Stack(
                     children: <Widget>[
+                      
+
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 0, left: 0, right: 0, bottom: 6),
@@ -85,6 +89,7 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               topRight: Radius.circular(0.0),
                             ),
                           ),
+                          
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 top: 54, left: 10, right: 0, bottom: 8),
@@ -92,16 +97,32 @@ class PlasmaPlatformsScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
-                                  //mealsListData.titleTxt,
-                                  "Donate Plasma!",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                    letterSpacing: 0.2,
-                                    color: FitnessAppTheme.white,
+                                //=============> back button===
+                                Row(children: [
+                                  GestureDetector(
+                                      child: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,                                    
+                                      ),
+                                      onTap: (){
+                                        Navigator.pop(context);
+                                      },
+                                    ), 
+                                    ],
+                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top:8.0),
+                                  child: Text(
+                                    //mealsListData.titleTxt,
+                                    "Donate Plasma!",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22,
+                                      letterSpacing: 0.2,
+                                      color: FitnessAppTheme.white,
+                                    ),
                                   ),
                                 ),
                                 Expanded(

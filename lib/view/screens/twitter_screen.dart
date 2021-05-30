@@ -70,6 +70,7 @@ class TwitterScreen extends StatelessWidget {
                               topRight: Radius.circular(0.0),
                             ),
                           ),
+                          
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 top: 54, left: 10, right: 0, bottom: 8),
@@ -77,16 +78,32 @@ class TwitterScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
-                                  //mealsListData.titleTxt,
-                                  "Twitter Feed Help",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    letterSpacing: 0.2,
-                                    color: FitnessAppTheme.white,
+                                 //=============> back button===
+                                Row(children: [
+                                  GestureDetector(
+                                      child: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,                                    
+                                      ),
+                                      onTap: (){
+                                        Navigator.pop(context);
+                                      },
+                                    ), 
+                                    ],
+                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:10.0,top:5),
+                                  child: Text(
+                                    //mealsListData.titleTxt,
+                                    "Twitter Feed Help",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      letterSpacing: 0.2,
+                                      color: FitnessAppTheme.white,
+                                    ),
                                   ),
                                 ),
                                 Expanded(

@@ -98,21 +98,37 @@ class _WhatsAppBotPageState extends State<WhatsAppBotPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
-                                  mealsListData.titleTxt,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    letterSpacing: 0.2,
-                                    color: FitnessAppTheme.white,
+                                //=============> back button===
+                                Row(children: [
+                                  GestureDetector(
+                                      child: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,                                    
+                                      ),
+                                      onTap: (){
+                                        Navigator.pop(context);
+                                      },
+                                    ), 
+                                    ],
+                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top:8.0,left: 10),
+                                  child: Text(
+                                    mealsListData.titleTxt,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      letterSpacing: 0.2,
+                                      color: FitnessAppTheme.white,
+                                    ),
                                   ),
                                 ),
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        top: 14, bottom: 8),
+                                        top: 14, bottom: 8,left: 10),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,

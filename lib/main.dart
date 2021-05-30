@@ -25,12 +25,14 @@ import 'package:firebase_core/firebase_core.dart';
 // import 'package:zealth_symptomapp/view/severty.dart';
 String plasmaCardString = "Plasma Help";
 String twitterCardString = "Twitter Help";
+String stateCardString = "State Help";
 
 var textValue = 'English';
 
 // import 'package:zealth_symptomapp/view/severty.dart';
 bool notify_switch = false;
 String notify_text = 'Start';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -172,6 +174,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         textValue = 'हिन्दी';
                         plasmaCardString = "प्लाज्मा सहायता";
                         twitterCardString = "ट्विटर सहायता";
+                        stateCardString = "राज्य सहायता";
                       });
                     } else {
                       setState(() {
@@ -179,6 +182,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         textValue = 'English';
                         plasmaCardString = "Plasma Help";
                         twitterCardString = "Twitter Help";
+                        stateCardString = "State Help";
                       });
                     }
                   },
@@ -586,7 +590,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                                     : Icons.notifications_off,
                                 color: !notify_switch
                                     ? Colors.red
-                                    : Colors.greenAccent,
+                                    : Colors.lightBlueAccent,
                               ),
                               title: Text('Vaccine Slot Notification'),
                               subtitle: Text(
@@ -689,6 +693,45 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ),
                           ),
                         ),
+
+                          InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StateWebPage()),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                //backgroundBlendMode: ,
+                                color: Colors.white,
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            width: 90,
+                            height: 114,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  height: 34,
+                                  width: 33,
+                                  child: Image.asset('assets/indian-map (1).png'),
+                                ),
+                                Text(stateCardString,
+                                    style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                          color: Color(0xFF3E5061),
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 11),
+                                    ))
+                              ],
+                            ),
+                          ),
+                        ),
+                        
                         InkWell(
                           onTap: () {
                             Navigator.push(
@@ -726,43 +769,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
                             ),
                           ),
                         ),
-                             InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => StateWebPage()),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                //backgroundBlendMode: ,
-                                color: Colors.white,
-                                border:
-                                    Border.all(color: Colors.white, width: 2),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            width: 90,
-                            height: 114,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height: 34,
-                                  width: 33,
-                                  child: Image.asset('assets/twitter_icon.png'),
-                                ),
-                                Text(twitterCardString,
-                                    style: GoogleFonts.poppins(
-                                      textStyle: TextStyle(
-                                          color: Color(0xFF3E5061),
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 11),
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ),
+                      
                       ],
                     ),
                   ),
@@ -800,11 +807,11 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => HelplinePage(
-                                  mealsListData: mealsListData[1],
+                                  mealsListData: mealsListData[2],
                                 )),
                       );
                     },
-                    child: _categoryCard(mealsListData[1],
+                    child: _categoryCard(mealsListData[2],
                         color: LightColor.orange,
                         lightColor: LightColor.lightOrange),
                   )
@@ -825,11 +832,11 @@ class _SymptomsPageState extends State<SymptomsPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => WhatsAppBotPage(
-                                  mealsListData: mealsListData[2],
+                                  mealsListData: mealsListData[1],
                                 )),
                       );
                     },
-                    child: _categoryCard(mealsListData[2], // whatsapp bot card
+                    child: _categoryCard(mealsListData[1], // whatsapp bot card
                         color: LightColor.green,
                         lightColor: LightColor.lightGreen),
                   ),

@@ -9,6 +9,7 @@ import 'package:covidessen/view/screens/stateweb.dart';
 import 'package:covidessen/view/screens/twitter_screen.dart';
 import 'package:covidessen/view/screens/twittercard.dart';
 import 'package:covidessen/view/screens/team.dart';
+import 'package:covidessen/view/screens/user_cards.dart';
 // import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/whatsapp.dart';
@@ -77,7 +78,9 @@ class _RootPageState extends State<RootPage> {
  
   List<Widget> pages = [
     SymptomsPage(),
-    AboutUsPage(),
+   
+    UserCards(),
+     AboutUsPage(),
     Disclaimer_page(),
   ];
 
@@ -109,6 +112,23 @@ class _RootPageState extends State<RootPage> {
               ),
               title: Text(
                 "Home",
+                style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF3E5061)),
+              ),
+            ),
+              BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(bottom: 7, top: 10),
+                child: Container(
+                  height: 21,
+                  width: 30,
+                  child: Image.asset("assets/home-web-button-outline.png"),
+                ),
+              ),
+              title: Text(
+                "Dose Feeds",
                 style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,

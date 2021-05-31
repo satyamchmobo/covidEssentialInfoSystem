@@ -8,6 +8,7 @@ import 'package:covidessen/view/screens/setting.dart';
 import 'package:covidessen/view/screens/stateweb.dart';
 import 'package:covidessen/view/screens/twitter_screen.dart';
 import 'package:covidessen/view/screens/twittercard.dart';
+import 'package:covidessen/view/screens/team.dart';
 // import 'package:covidessen/view/screens/plasma.dart';
 import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:covidessen/view/screens/whatsapp.dart';
@@ -73,10 +74,10 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int selectedIndex = 0;
-
+ 
   List<Widget> pages = [
     SymptomsPage(),
-    WhatsAppBotPage(),
+    AboutUsPage(),
     Disclaimer_page(),
   ];
 

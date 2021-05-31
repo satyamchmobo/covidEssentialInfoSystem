@@ -72,7 +72,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     SizedBox(
                         height: 80,
                         width: 80,
-                        child: Image.asset("images/launch-.jpg")),
+                        child: Image.asset("assets/launch-.jpg")),
                   ],
                 ),
               ),

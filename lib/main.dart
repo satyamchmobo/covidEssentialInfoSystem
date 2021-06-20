@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: SymptomsPage(),
+      home: RootPage(),
     );
   }
 }
@@ -86,29 +86,29 @@ List<Widget> pages = [
   ];
 
 //onwillpop() 
-  // Future<bool> _onBackPressed() {
-  //   return showDialog(
-  //       context: context,
-  //       builder: (context) => AlertDialog(
-  //             title: Text("Do you really want to exit the app?"),
-  //             // ignore: deprecated_member_use
-  //             actions: <Widget>[
-  //               FlatButton(
-  //                 onPressed: () => Navigator.pop(context, false),
-  //                 child: Text("NO"),
-  //               ),
-  //               FlatButton(
-  //                 onPressed: () => Navigator.pop(context, true),
-  //                 child: Text("Yes"),
-  //               ),
-  //             ],
-  //           ));
-  // }
+  Future<bool> _onBackPressed() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Do you really want to exit the app?"),
+              // ignore: deprecated_member_use
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text("NO"),
+                ),
+                FlatButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text("Yes"),
+                ),
+              ],
+            ));
+  }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      //onWillPop: _onBackPressed,
+      onWillPop: _onBackPressed,
       child: Scaffold(
         body: getBody(),
         bottomNavigationBar: SizedBox(
@@ -276,7 +276,8 @@ class _SymptomsPageState extends State<SymptomsPage> {
   };
   List listOfWid = <Widget>[];
 
-  @override
+  
+
   Widget build(BuildContext context) {
     // ===================> Variable Section <=====================
     String AccName = "Dnyaneshwar ";
@@ -336,6 +337,7 @@ class _SymptomsPageState extends State<SymptomsPage> {
           )
         ],
       ),
+      
       //============================> Drawee Start<=================================
       drawer: Drawer(
         child: ListView(

@@ -398,12 +398,17 @@ class _SymptomsPageState extends State<SymptomsPage> {
                 );
               },
             ),
-            ListTile(
+           ListTile(
               leading: Icon(Icons.logout),
-              title: Text("Log Out"),
-              onTap: () {},
-            ),
-          ],
+              title: Text('Log Out'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+            )
+          ]
         ),
       ),
       //============================> Drawee Close<=================================

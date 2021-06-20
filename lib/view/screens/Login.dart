@@ -106,7 +106,7 @@ final password =TextEditingController();
                                     
                                      Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => SymptomsPage()),); 
+                                      MaterialPageRoute(builder: (context) => RootPage()),); 
                                   }
                                   else{
                                     Fluttertoast.showToast(

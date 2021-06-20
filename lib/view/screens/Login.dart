@@ -11,8 +11,8 @@ import '../../main.dart';
 
 
 class Login extends StatelessWidget { 
-  TextEditingController email = TextEditingController();
-  TextEditingController password =TextEditingController();
+final email = TextEditingController();
+final password =TextEditingController();
 
   FirebaseAuth auth = FirebaseAuth.instance;
   bool isLogin = false;
@@ -78,8 +78,9 @@ class Login extends StatelessWidget {
                      ), 
                      SizedBox(height: 40),
                      TextFormField(        
-                       keyboardType: TextInputType.emailAddress,             
-                       decoration: InputDecoration(       
+                        keyboardType: TextInputType.emailAddress,    
+                        obscureText: true,         
+                        decoration: InputDecoration(       
                          filled: true,                                         
                          hintStyle: TextStyle(fontSize: 20.0,color: Colors.black38 , fontWeight: FontWeight.normal,),
                          hintText: 'Password',                        
@@ -87,7 +88,8 @@ class Login extends StatelessWidget {
                          fillColor: Colors.grey.shade300,
                          border: new OutlineInputBorder(
                          borderRadius: BorderRadius.circular(40.0),   
-                          borderSide: BorderSide.none                                                 
+                         borderSide: BorderSide.none 
+                                                                         
                          ), 
                        ),
                        controller:  password,

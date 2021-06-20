@@ -24,6 +24,8 @@ import 'package:covidessen/theme/theme.dart';
 import 'package:covidessen/theme/light_color.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'view/screens/sign_in.dart';
+
 // import 'package:covidessen/model/custom_switch.dart';
 // import 'package:zealth_symptomapp/view/severty.dart';
 String plasmaCardString = "Plasma Help";
@@ -63,7 +65,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: RootPage(),
+      home: SymptomsPage(),
     );
   }
 }
@@ -76,7 +78,7 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   int selectedIndex = 0;
 
-  List<Widget> pages = [
+List<Widget> pages = [
     SymptomsPage(),
     UserCards(),
     AboutUsPage(),
@@ -84,29 +86,29 @@ class _RootPageState extends State<RootPage> {
   ];
 
 //onwillpop() 
-  Future<bool> _onBackPressed() {
-    return showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: Text("Do you really want to exit the app?"),
-              // ignore: deprecated_member_use
-              actions: <Widget>[
-                FlatButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text("NO"),
-                ),
-                FlatButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  child: Text("Yes"),
-                ),
-              ],
-            ));
-  }
+  // Future<bool> _onBackPressed() {
+  //   return showDialog(
+  //       context: context,
+  //       builder: (context) => AlertDialog(
+  //             title: Text("Do you really want to exit the app?"),
+  //             // ignore: deprecated_member_use
+  //             actions: <Widget>[
+  //               FlatButton(
+  //                 onPressed: () => Navigator.pop(context, false),
+  //                 child: Text("NO"),
+  //               ),
+  //               FlatButton(
+  //                 onPressed: () => Navigator.pop(context, true),
+  //                 child: Text("Yes"),
+  //               ),
+  //             ],
+  //           ));
+  // }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: _onBackPressed,
+      //onWillPop: _onBackPressed,
       child: Scaffold(
         body: getBody(),
         bottomNavigationBar: SizedBox(

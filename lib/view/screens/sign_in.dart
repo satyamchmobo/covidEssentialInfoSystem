@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:covidessen/view/screens/Login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 
 
 class Register extends StatefulWidget {
@@ -11,18 +15,25 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
 
   GlobalKey <FormState > _formKey = GlobalKey<FormState>();
-
+ 
+  final fb = FirebaseDatabase.instance;
+  final myController = TextEditingController();
+  final _name = new TextEditingController();
   final  _email = new TextEditingController();
-  final _name= new TextEditingController();
   final _mobileNo= new TextEditingController();
   final _password= new TextEditingController();
+  final _age =new TextEditingController();
+  final _pin=new TextEditingController();
+  final _confirm_pass = new TextEditingController();
 
 
+  
   @override
 
 
   Widget build(BuildContext context) {
-    String log = 'Log';
+    final ref = fb.reference();
+    final  log = 'Log';
     return Scaffold(
 
       body: Center(
@@ -51,6 +62,7 @@ class _RegisterState extends State<Register> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
+                    //  controller: myController,
                       cursorHeight: 35,
                       decoration: InputDecoration(
                         hintStyle: TextStyle(fontSize: 25.0,color: Colors.black26,),
@@ -62,16 +74,31 @@ class _RegisterState extends State<Register> {
                               size: 40,
                             ),
                       ),
-                      // validator: (value){
-                      //   if(value.isEmpty || !RegExp("[a-z A-Z]").hasMatch(value)){
-                      //     return "Enter valid Name ";
-                      //   }
-                      //   return null;
+                     controller: _name,                
+                      
+                    ),
+                  ),
 
-                      // },
-                      // onSaved: (value){
-                      //   _name.text = value;
-                      // },
+                  SizedBox(height: 20,),
+
+                  // Age TextField
+
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextFormField(
+                     // controller: myController,
+                      cursorHeight: 35,
+                      decoration: InputDecoration(
+                        hintStyle: TextStyle(fontSize: 25.0,color: Colors.black26,),
+                        hintText: ' Age' ,
+                        enabledBorder: UnderlineInputBorder(),
+                        prefixIcon: Icon(
+                              Icons.child_care,
+                              color: Colors.black26,
+                              size: 40,
+                            ),
+                      ),
+                     controller: _age,  
                     ),
                   ),
 
@@ -93,19 +120,7 @@ class _RegisterState extends State<Register> {
                           size: 40,
                         ),
                       ),
-                      // onSaved: (value) {
-                      //   _email.text = value;
-
-                      // },
-                      // validator: (value) {
-                      //   if (value.isEmpty ||
-                      //       !RegExp("[a-zA-Z0-9.!#\$%&'*+/=?^_`{|}~-]+\@[a-zA-Z0-9-]+[\.][a-zA-Z0-9-]")
-                      //       //!RegExp( r"[a-z A-Z 0-9 _ \-\.]+@ [a-zA-Z]+\.[a-z]{2,3}$")
-                      //           .hasMatch(value)) {
-                      //     return 'Enter a valid email!';
-                      //   }
-                      //   return null;
-                      // },
+                    controller: _email,  
 
                     ),
                   ),
@@ -128,21 +143,7 @@ class _RegisterState extends State<Register> {
                           size: 40,
                         ),
                       ),
-                      // validator: (value) {
-                      //   if (value.isEmpty ||
-                      //       !RegExp("[ 9 8 ][0-9]{9}")
-                      //           .hasMatch(value)) {
-                      //     return 'Enter a valid Mobile number!';
-                      //   }
-                      //   if(value.length != 10){
-                      //     return 'Enter a 10 digit  Mobile number!';
-                      //   }
-                      //   return null;
-                      // },
-
-                      // onSaved: (value){
-                      //   _mobileNo.text = value;
-                      // },
+                      controller: _mobileNo,  
                     ),
                   ),
 
@@ -164,21 +165,7 @@ class _RegisterState extends State<Register> {
                           size: 40,
                         ),
                       ),
-                      // validator: (value) {
-                      //   if (value.isEmpty ||
-                      //       !RegExp("[ 9 8 ][0-9]{9}")
-                      //           .hasMatch(value)) {
-                      //     return 'Enter a valid Mobile number!';
-                      //   }
-                      //   if(value.length != 10){
-                      //     return 'Enter a 10 digit  Mobile number!';
-                      //   }
-                      //   return null;
-                      // },
-
-                      // onSaved: (value){
-                      //   _mobileNo.text = value;
-                      // },
+                      controller: _pin,  
                     ),
                   ),
 
@@ -201,23 +188,8 @@ class _RegisterState extends State<Register> {
                           color: Colors.black26,
                           size: 40,
                         ),
-
-
                       ),
-                      // validator: (value){
-                      //   if(value.length >= 6){
-                      //     return null;
-                      //   }
-                      //   return 'Enter password of 6 digit';
-
-                      // },
-                      // onSaved: (value){
-                      //   _password.text = value;
-                      // },
-
-
-
-
+                      controller: _password,  
                     ),
                   ),
 
@@ -240,13 +212,8 @@ class _RegisterState extends State<Register> {
                           size: 40,
                         ),
                       ),
-                      // validator: (value){
-                      //   if(_password.text = value){
-                      //       return "Entered  Password is Not Same.";
-                      //   }
-                      //   return null;
-                      // },
-                     // onSaved: (val)=> _password=val,
+                      // here we have check the condition of the confirm password
+                      controller: _confirm_pass,
                     ),
                   ),
 
@@ -257,18 +224,45 @@ class _RegisterState extends State<Register> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child:   FlatButton(
-                        onPressed: (){
+                        onPressed: () async {
                           // if(!_formKey.currentState.validate()){
                           //   return;
                           // }
                           //_formKey.currentState.save();
-                          print(_name);
-                          print(_mobileNo);
-                          print(_password);
-                          print(_email);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Login( )),);
+                          print("=============================================");
+                         
+                          print(_name.text);
+                          print(_mobileNo.text);
+                          print(_password.text);
+                          print(_confirm_pass);
+                          print(_email.text);
+                          print(_pin.text);
+                          print(_age.text);
+                           try { 
+                                   UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(                               
+                                      email:  _email.text,
+                                      password:_password.text
+                                   );
+                                  //sleep(Duration.microsecondsPerMillisecond(1000));
+                                  await FirebaseFirestore.instance.collection('users')         
+                                   .doc(userCredential.user.uid).set({ 'firstName': _name.text,'email': _email.text,'Mobile_no': _mobileNo.text,'password':_password.text,'age':_age.text,'PIN':_pin.text,});
+                                  Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => Login( )),);
+
+                                } on FirebaseAuthException catch (e) {
+                                  if (e.code == 'weak-password') {
+                                    print('The password provided is too weak.');
+                                  } else if (e.code == 'email-already-in-use') {
+                                    print('The account already exists for that email.');
+                                  }
+                                } catch (e) {
+                                  print(e);
+                                }
+
+
+
+                          
                           _email.text ="";
                           _password.text ="";
                           _mobileNo.text="";
@@ -327,3 +321,4 @@ class _RegisterState extends State<Register> {
     );
   }
 }
+  

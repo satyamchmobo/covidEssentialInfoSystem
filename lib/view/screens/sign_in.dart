@@ -234,7 +234,7 @@ class _RegisterState extends State<Register> {
                           print(_name.text);
                           print(_mobileNo.text);
                           print(_password.text);
-                          print(_confirm_pass);
+                          print(_confirm_pass.text);
                           print(_email.text);
                           print(_pin.text);
                           print(_age.text);
@@ -262,11 +262,13 @@ class _RegisterState extends State<Register> {
 
 
 
-                          
+                          _pin.text="";
+                          _age.text="";
                           _email.text ="";
                           _password.text ="";
                           _mobileNo.text="";
                           _name.text="";
+                          _confirm_pass.text="";
 
 
 

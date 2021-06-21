@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
+// import 'package:form_field_validator/form_field_validator.dart';
+
 
 Widget customTextField(
     {TextEditingController dynamicController,
@@ -9,7 +10,7 @@ Widget customTextField(
     padding: const EdgeInsets.all(10.0),
     child: TextFormField(
       //  controller: myController,
-      validator: MultiValidator(validatorList),
+     // validator: MultiValidator(validatorList),
 
       cursorHeight: 35,
       decoration: InputDecoration(
@@ -28,4 +29,7 @@ Widget customTextField(
       controller: dynamicController,
     ),
   );
+}
+
+class MultiValidator {
 }

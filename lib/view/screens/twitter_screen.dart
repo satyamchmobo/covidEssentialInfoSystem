@@ -1,5 +1,6 @@
 import 'package:covidessen/fintness_app_theme.dart';
 import 'package:covidessen/main.dart';
+import 'package:covidessen/view/screens/vaccineRegis.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:google_fonts/google_fonts.dart';

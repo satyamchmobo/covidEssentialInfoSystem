@@ -1,3 +1,4 @@
+import 'package:covidessen/view/screens/BottomNavBar/bottomNav.dart';
 import 'package:covidessen/view/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -106,7 +107,7 @@ final password =TextEditingController();
                                     
                                      Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => RootPage()),); 
+                                      MaterialPageRoute(builder: (context) => BottomNavPage()),); 
                                   }
                                   else{
                                     Fluttertoast.showToast(

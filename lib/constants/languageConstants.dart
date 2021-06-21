@@ -9,5 +9,7 @@ class LanguageConstants {
 
   String stateCardStringH = "राज्य सहायता";
   String stateCardStringE = "State Help";
-}
 
+  String dashboardAppbarTitleE = "Fight&Win";
+  String dashboardAppbarTitleH = "लड़ो और जीतो";
+}

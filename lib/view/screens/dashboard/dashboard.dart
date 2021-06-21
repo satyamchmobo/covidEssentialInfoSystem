@@ -114,7 +114,7 @@ class _DashboardState extends State<Dashboard> {
           color: Colors.grey,
         ),
         title: Text(
-          "Fight&Win",
+          langConsObj.dashboardAppbarTitleE,
           style: GoogleFonts.poppins(
               color: Colors.grey, fontSize: 20, fontWeight: FontWeight.w600),
         ),

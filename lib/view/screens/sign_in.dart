@@ -380,27 +380,40 @@ class _RegisterState extends State<Register> {
                     height: 30,
                   ),
 
-                  // Text navigation with Gesture Detector
+                 // Text navigation with Gesture Detector
 
-                  // CEnter(
+                  Center(
 
-                  //   child: Padding(padding: EdgeInsets.all(10),
-                  //     child:
-                  //       GestureDetector(
-
-                  //         child: Text('Already have an account?${log}',
-                  //             style: TextStyle(fontSize: 25.0,color: Colors.black26,),
-
-                  //         ),
-                  //         onTap: (){
-                  //           validator:
-                  //           Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(builder: (context) => Login()),);
-                  //         },
-                  //       ),
-                  //   ),
-                  // ),
+                    child: Padding(padding: EdgeInsets.all(10),
+                      child:
+                      GestureDetector(
+                              onTap: (){
+                            validator:
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Login()),);
+                          },
+                          child: RichText(
+                          text: TextSpan(
+                            children:[
+                            
+                            
+                                    TextSpan(
+                                      text: "Already have an account?",
+                                      style: TextStyle(fontSize: 25.0,color: Colors.black26,),
+                                    ),
+                                    TextSpan(
+                                      text: "Login",
+                                      style: TextStyle(fontSize: 25.0,color: Colors.blue,decoration: TextDecoration.underline),
+                                    ),
+                                    
+                                  ],
+                           ),
+                          ),
+                      ),
+                       
+                    ),
+                  ),
                 ],
               ),
             ),

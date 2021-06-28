@@ -15,7 +15,7 @@ class BottomNavPage extends StatefulWidget {
 class _BottomNavPageState extends State<BottomNavPage> {
   int selectedIndex = 0;
 
-  List<Widget> pages = [
+  List<Widget>  pages = [
     Dashboard(),
     UserCards(),
     AboutUsPage(),

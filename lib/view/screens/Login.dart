@@ -162,22 +162,13 @@ final password =TextEditingController();
                               MaterialPageRoute(builder: (context) => Register()),);
                                 },
                               ),
-
-                      
                       ],
                     ),
-
-                     
-                   
                   ],
-                   
               ),
-              
             ),
-          
         ),
       ),
-      
     );
   }
 }

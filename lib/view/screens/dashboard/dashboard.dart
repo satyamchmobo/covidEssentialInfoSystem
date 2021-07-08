@@ -101,8 +101,8 @@ class _DashboardState extends State<Dashboard> {
 
   Widget build(BuildContext context) {
     // ===================> Variable Section <=====================
-    String AccName = "Dnyaneshwar ";
-    String AccEmail = "wakshe2@gmail.com";
+    String accName = "user name ";
+    String accEmail = "user2@gmail.com";
 
     listOfWid.clear();
     map.forEach((key, value) => listOfWid.add(value));
@@ -164,11 +164,11 @@ class _DashboardState extends State<Dashboard> {
         child: ListView(padding: EdgeInsets.zero, children: [
           UserAccountsDrawerHeader(
             accountName: Text(
-              AccName,
+              accName,
               style: TextStyle(color: Colors.black),
             ),
             accountEmail: Text(
-              AccEmail,
+              accEmail,
               style: TextStyle(color: Colors.black),
             ),
             currentAccountPicture: CircleAvatar(

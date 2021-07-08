@@ -83,7 +83,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
                   child: Container(
                     height: 21,
                     width: 30,
-                    child: Image.asset("assets/home-web-button-outline.png"),
+                    child: Image.asset("assets/icons8-connect-256.png"),
                   ),
                 ),
                 title: Text(

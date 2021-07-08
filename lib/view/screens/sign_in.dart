@@ -76,8 +76,8 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    final ref = fb.reference();
-    final log = 'Log';
+    // final ref = fb.reference();
+    // final log = 'Log';
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -268,7 +268,7 @@ class _RegisterState extends State<Register> {
                         hintText: ' PIN ',
                         enabledBorder: UnderlineInputBorder(),
                         prefixIcon: Icon(
-                          Icons.pin,
+                          Icons.fiber_pin,
                           color: Colors.black26,
                           size: 40,
                         ),

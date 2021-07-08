@@ -6,7 +6,6 @@ import 'package:covidessen/view/screens/user_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class BottomNavPage extends StatefulWidget {
   @override
   _BottomNavPageState createState() => _BottomNavPageState();
@@ -19,7 +18,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
     Dashboard(),
     UserCards(),
     AboutUsPage(),
-    Disclaimer_page(),
+    Privacy(),
   ];
 
 //onwillpop()

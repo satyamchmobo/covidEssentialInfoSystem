@@ -56,12 +56,10 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ask To Help'),
+        title: Text('Find Labs'),
       ),
-      body: ListView.builder(
-        itemCount: _data.length,
-        itemBuilder: (context, index) {
-          return Card(
+      body:
+           Center(
             child: Padding(
               padding: const EdgeInsets.only(
                   top: 32.0, bottom: 32.0, left: 16.0, right: 16.0),
@@ -69,21 +67,50 @@ class _ICMRlabspageState extends State<ICMRlabspage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _data[index].location,
+                    'Coming Soon',
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    _data[index].number,
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
+                  // Text(
+                  //   _data[index].number,
+                  //   style: TextStyle(
+                  //     color: Colors.grey.shade600,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
-          );
-        },
-      ),
+          ),
+
+
+
+      //  ListView.builder(
+      //   itemCount: _data.length,
+      //   itemBuilder: (context, index) {
+      //     return Center(
+      //       child: Card(
+      //         child: Padding(
+      //           padding: const EdgeInsets.only(
+      //               top: 32.0, bottom: 32.0, left: 16.0, right: 16.0),
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               Text(
+      //                 _data[index].location,
+      //                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      //               ),
+      //               Text(
+      //                 _data[index].number,
+      //                 style: TextStyle(
+      //                   color: Colors.grey.shade600,
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //     );
+      //   },
+      // ),
     );
   }
   // MealsListData mealsListData;

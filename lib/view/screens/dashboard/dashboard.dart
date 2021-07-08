@@ -197,16 +197,18 @@ class _DashboardState extends State<Dashboard> {
               Navigator.pop(context);
             },
           ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Setting'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Settings()),
-              );
-            },
-          ),
+
+          // ListTile(
+          //   leading: Icon(Icons.settings),
+          //   title: Text('Setting'),
+          //   onTap: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => Settings()),
+          //     );
+          //   },
+          // ),
+
           ListTile(
             leading: Icon(Icons.contacts),
             title: Text('About Us'),
@@ -420,7 +422,7 @@ class _DashboardState extends State<Dashboard> {
                                 Container(
                                   margin: EdgeInsets.only(right: 60),
                                   child: TextButton(
-                                    child: const Text('DETAILS'),
+                                    child: const Text('COMING SOON'),
                                     onPressed: () {/* ... */},
                                   ),
                                 ),
@@ -592,26 +594,26 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
-            SizedBox(
-              height: AppTheme.fullHeight(context) * .20,
-              width: AppTheme.fullWidth(context),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // physics: BouncingScrollPhysics(),
-                // scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  _categoryCard(mealsListData[2],
-                      color: LightColor.green,
-                      lightColor: LightColor.lightGreen),
+            // SizedBox(
+            //   height: AppTheme.fullHeight(context) * .20,
+            //   width: AppTheme.fullWidth(context),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //     // physics: BouncingScrollPhysics(),
+            //     // scrollDirection: Axis.horizontal,
+            //     children: <Widget>[
+            //       _categoryCard(mealsListData[2],
+            //           color: LightColor.green,
+            //           lightColor: LightColor.lightGreen),
 
-                  // _categoryCard("Milk Products", "50+ products",
-                  //     color: LightColor.skyBlue, lightColor: LightColor.lightBlue),
-                  _categoryCard(mealsListData[3],
-                      color: LightColor.orange,
-                      lightColor: LightColor.lightOrange)
-                ],
-              ),
-            ),
+            //       // _categoryCard("Milk Products", "50+ products",
+            //       //     color: LightColor.skyBlue, lightColor: LightColor.lightBlue),
+            //       _categoryCard(mealsListData[3],
+            //           color: LightColor.orange,
+            //           lightColor: LightColor.lightOrange)
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

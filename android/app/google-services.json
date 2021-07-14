@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:483963954501:android:e0f07311256c29297c8a2c",
+        "android_client_info": {
+          "package_name": "com.daas.covidessen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483963954501-ac0asj08gbgphbas8evhjd2unrm3bvp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUDHy9zZV7_AHcdOOl3WOWKyttrnaeifo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483963954501-ac0asj08gbgphbas8evhjd2unrm3bvp3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:483963954501:android:420254b6cc31c5c07c8a2c",
         "android_client_info": {
           "package_name": "com.example.covidessen"

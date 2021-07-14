@@ -194,94 +194,92 @@ class _PrivacyState extends State<Privacy> {
                 child: new Column(
                   children: <Widget>[
                     new Text(
-                        "Kim Shin Fine Foods Pvt. Ltd.  is the licensed owner of the brand Yonsei Dairy India and the website www.yonseidairy.in (”The Site”). KSFF Pvt. Ltd. respects your privacy. This Privacy Policy provides succinctly the manner your data is collected and used by KSFF Pvt. Ltd. on the Site. As a visitor to the Site/ Customer you are advised to please read the Privacy Policy carefully. By accessing the services provided by the Site you agree to the collection and use of your data by KSFF Pvt. Ltd. in the manner provided in this Privacy Policy.",
+                        "Disclaimer:Fight & Win does not warrant the functions contained in the program will meet your requirements or that the operation of the program will be uninterrupted or error-free. We are not reading user any kind of user data and personal information for further use.IN NO EVENT, UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING, SHALL WSDOT, OR ANY PERSON BE LIABLE FOR ANY LOSS, EXPENSE OR DAMAGE, OF ANY TYPE OR NATURE ARISING OUT OF THE USE OF, OR INABILITY TO USE THIS SOFTWARE OR PROGRAM, INCLUDING, BUT NOT LIMITED TO, CLAIMS, SUITS OR CAUSES OF ACTION INVOLVING ALLEGED INFRINGEMENT OF COPYRIGHTS, PATENTS, TRADEMARKS, TRADE SECRETS, OR UNFAIR COMPETITION.",
                         textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "As part of the registration process on the Site, KSFF Pvt. Ltd. may collect the following personally identifiable information about you: Name including first and last name, alternate email address, mobile phone number and contact details, Postal code, Demographic profile (like your age, gender, occupation, education, address etc.) and information about the pages on the site you visit/access, the links you click on the site, the number of times you access the page and any such browsing information.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "KSFF Pvt. Ltd. will collect personally identifiable information about you only as part of a voluntary registration process, on-line survey or any combination thereof. The Site may contain links to other Websites. KSFF Pvt. Ltd. is not responsible for the privacy practices of such Web sites which it does not own, manage or control. The Site and third-party vendors, including Google, use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the DoubleClick cookie) together to inform, optimize, and serve ads based on someone’s past visits to the Site.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "KSFF Pvt. Ltd. will use your personal information to provide personalized features to you on the Site and to provide for promotional offers to you through the Site and other channels. BDPL will also provide this information to its business associates and partners to get in touch with you when necessary to provide the services requested by you. KSFF Pvt. Ltd. will use this information to preserve transaction history as governed by existing law or policy. BDPL may also use the contact information internally to direct its efforts for product improvement, to contact you as a survey respondent, to notify you if you win any contest; and to send you promotional materials from its contest sponsors or advertisers. KSFF Pvt. Ltd. will also use this information to serve various promotional and advertising materials to you via display advertisements through the Google Ad network on third party websites. You can opt out of Google Analytics for Display Advertising and customize Google Display network ads using the Ads Preferences Manager. Information about Customers on an aggregate (excluding any information that may identify you specifically) covering Customer transaction data and Customer demographic and location data may be provided to partners of BDPL for the purpose of creating additional features on the website, creating appropriate merchandising or creating new products and services and conducting marketing research and statistical analysis of customer behavior and transactions.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "KSFF Pvt. Ltd. will not use your financial information for any purpose other than to complete a transaction with you. KSFF Pvt. Ltd. does not rent, sell or share your personal information and will not disclose any of your personally identifiable information to third parties. In cases where it has your permission to provide products or services you’ve requested and such information is necessary to provide these products or services the information may be shared with KSFF Pvt. Ltd. business associates and partners. KSFF Pvt. Ltd. may, however, share consumer information on an aggregate with its partners or third parties where it deems necessary. In addition KSFF Pvt. Ltd. may use this information for promotional offers, to help investigate, prevent or take action regarding unlawful and illegal activities, suspected fraud, potential threat to the safety or security of any person, violations of the Site’s terms of use or to defend against legal claims; special circumstances such as compliance with subpoenas, court orders, requests/order from legal authorities or law enforcement agencies requiring such disclosure.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "Kim Shin Fine Foods Pvt. Ltd.  is the licensed owner of the brand Yonsei Dairy India and the website www.yonseidairy.in (”The Site”). KSFF Pvt. Ltd. respects your privacy. This Privacy Policy provides succinctly the manner your data is collected and used by KSFF Pvt. Ltd. on the Site. As a visitor to the Site/ Customer you are advised to please read the Privacy Policy carefully. By accessing the services provided by the Site you agree to the collection and use of your data by KSFF Pvt. Ltd. in the manner provided in this Privacy Policy.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "To correct or update any information you have provided, the Site allows you to do it online. In the event of loss of access details you can send an email to: kimshinfinefoods@gmail.com",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text(
+                    //     "KSFF Pvt. Ltd. reserves the right to change or update this policy at any time. Such changes shall be effective immediately upon posting to the Site.",
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                    // new Text("Grievance Officer",
+                    //     style: TextStyle(
+                    //         fontWeight: FontWeight.bold, color: Colors.black),
+                    //     textAlign: TextAlign.justify),
+                    // SizedBox(
+                    //   height: 13,
+                    // ),
+                  
                     SizedBox(
                       height: 13,
                     ),
-                    new Text(
-                        "As part of the registration process on the Site, KSFF Pvt. Ltd. may collect the following personally identifiable information about you: Name including first and last name, alternate email address, mobile phone number and contact details, Postal code, Demographic profile (like your age, gender, occupation, education, address etc.) and information about the pages on the site you visit/access, the links you click on the site, the number of times you access the page and any such browsing information.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "KSFF Pvt. Ltd. will collect personally identifiable information about you only as part of a voluntary registration process, on-line survey or any combination thereof. The Site may contain links to other Websites. KSFF Pvt. Ltd. is not responsible for the privacy practices of such Web sites which it does not own, manage or control. The Site and third-party vendors, including Google, use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the DoubleClick cookie) together to inform, optimize, and serve ads based on someone’s past visits to the Site.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "KSFF Pvt. Ltd. will use your personal information to provide personalized features to you on the Site and to provide for promotional offers to you through the Site and other channels. BDPL will also provide this information to its business associates and partners to get in touch with you when necessary to provide the services requested by you. KSFF Pvt. Ltd. will use this information to preserve transaction history as governed by existing law or policy. BDPL may also use the contact information internally to direct its efforts for product improvement, to contact you as a survey respondent, to notify you if you win any contest; and to send you promotional materials from its contest sponsors or advertisers. KSFF Pvt. Ltd. will also use this information to serve various promotional and advertising materials to you via display advertisements through the Google Ad network on third party websites. You can opt out of Google Analytics for Display Advertising and customize Google Display network ads using the Ads Preferences Manager. Information about Customers on an aggregate (excluding any information that may identify you specifically) covering Customer transaction data and Customer demographic and location data may be provided to partners of BDPL for the purpose of creating additional features on the website, creating appropriate merchandising or creating new products and services and conducting marketing research and statistical analysis of customer behavior and transactions.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "KSFF Pvt. Ltd. will not use your financial information for any purpose other than to complete a transaction with you. KSFF Pvt. Ltd. does not rent, sell or share your personal information and will not disclose any of your personally identifiable information to third parties. In cases where it has your permission to provide products or services you’ve requested and such information is necessary to provide these products or services the information may be shared with KSFF Pvt. Ltd. business associates and partners. KSFF Pvt. Ltd. may, however, share consumer information on an aggregate with its partners or third parties where it deems necessary. In addition KSFF Pvt. Ltd. may use this information for promotional offers, to help investigate, prevent or take action regarding unlawful and illegal activities, suspected fraud, potential threat to the safety or security of any person, violations of the Site’s terms of use or to defend against legal claims; special circumstances such as compliance with subpoenas, court orders, requests/order from legal authorities or law enforcement agencies requiring such disclosure.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "Kim Shin Fine Foods Pvt. Ltd.  is the licensed owner of the brand Yonsei Dairy India and the website www.yonseidairy.in (”The Site”). KSFF Pvt. Ltd. respects your privacy. This Privacy Policy provides succinctly the manner your data is collected and used by KSFF Pvt. Ltd. on the Site. As a visitor to the Site/ Customer you are advised to please read the Privacy Policy carefully. By accessing the services provided by the Site you agree to the collection and use of your data by KSFF Pvt. Ltd. in the manner provided in this Privacy Policy.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "To correct or update any information you have provided, the Site allows you to do it online. In the event of loss of access details you can send an email to: kimshinfinefoods@gmail.com",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "KSFF Pvt. Ltd. reserves the right to change or update this policy at any time. Such changes shall be effective immediately upon posting to the Site.",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text("Grievance Officer",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black),
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    new Text(
-                        "In accordance with the Information Technology Act, 2000 and Rules made thereunder, the name and contact details of the Grievance Officer are provided below:",
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 13,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        new Text("Name: Yogesh Sharma",
-                            textAlign: TextAlign.justify),
+                    
+                    // Column(
+                    //   crossAxisAlignment: CrossAxisAlignment.start,
+                    //   children: [
+                    //     new Text("Name: Yogesh Sharma",
+                    //         textAlign: TextAlign.justify),
 
-                        new Text(
-                            "Address: D-78 Vipul World Sector-48, Sohna Road Gurgaon, Haryana-122001",
-                            textAlign: TextAlign.left),
-                        //  SizedBox(height: 3,),
+                    //     new Text(
+                    //         "Address: D-78 Vipul World Sector-48, Sohna Road Gurgaon, Haryana-122001",
+                    //         textAlign: TextAlign.left),
+                    //     //  SizedBox(height: 3,),
 
-                        new Text("Phone No: +91-9971177306",
-                            textAlign: TextAlign.justify),
+                    //     new Text("Phone No: +91-9971177306",
+                    //         textAlign: TextAlign.justify),
 
-                        new Text("E-mail: kimshinfinefoods@gmail.comr",
-                            textAlign: TextAlign.justify),
-                        SizedBox(
-                          height: 13,
-                        ),
+                    //     new Text("E-mail: kimshinfinefoods@gmail.comr",
+                    //         textAlign: TextAlign.justify),
+                    //     SizedBox(
+                    //       height: 13,
+                    //     ),
 
-                        new Text(
-                            " If you wish to make a complaint regarding any violation of the provisions of the Policy, you may send a written complaint to the Grievance Officer, who shall redress the complaint in accordance with the provisions of the Information Technology Act, 2000 and Rules made thereunder.",
-                            textAlign: TextAlign.justify),
-                        SizedBox(
-                          height: 13,
-                        ),
-                      ],
-                    )
+                
+                    //     SizedBox(
+                    //       height: 13,
+                    //     ),
+                    //   ],
+                    // )
+
                   ],
                 ),
               )))

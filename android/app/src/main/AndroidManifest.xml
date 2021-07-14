@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.covidessen">
+    package="com.daas.covidessen">
    <application
         android:label="covidessen"
         android:icon="@mipmap/ic_launcher">

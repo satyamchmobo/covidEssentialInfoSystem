@@ -1,4 +1,4 @@
-package com.example.covidessen
+package com.daas.covidessen
 
 import io.flutter.embedding.android.FlutterActivity
 
